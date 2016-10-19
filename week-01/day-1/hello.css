@@ -1,0 +1,45 @@
+h1, h2, article{
+text-align: center;
+font-family: "Kievit","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+
+}
+
+h1,h2 {
+  letter-spacing: -.02em;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    margin-left: -2.5px;
+    line-height: 1.04;
+    letter-spacing: -.028em;
+}
+
+body {
+  margin:0;
+}
+
+img{
+  width: 100%;
+}
+
+h2{
+  color: rgba(0,0,0,.44)
+}
+
+article {
+  width:700px;
+  margin: 0 auto;
+
+}
+
+p {
+font-style: italic;
+color: rgba(0,0,0,.8);
+text-align: left;
+line-height: 1.4;
+}
+
+a {
+  color: rgb(0,0,0);
+  font: "Kievit bold"
+}

@@ -1,0 +1,33 @@
+body {
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+h1 {
+margin-left: 30px;
+
+}
+
+p {
+
+  padding: 30px;
+  border: 2px solid black;
+  width: 300px;
+  font-size: 18px;
+  margin-left: 30px;
+  background-image: url("kacsa.png");
+  background-repeat:no-repeat;
+
+}
+
+.first {
+  background-position: left center;
+}
+
+.second {
+  background-position: center;
+}
+
+.third {
+  background-position: bottom right;
+}

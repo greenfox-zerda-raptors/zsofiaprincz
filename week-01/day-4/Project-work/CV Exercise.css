@@ -1,8 +1,96 @@
-header {
-  background-image: url(header.jpg);
+body {
+  font-family: "Calibri", "sans-serif"
+}
+
+.picture{
+  background-image: url(exercise.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
+  padding-left: 0;
+  opacity: 0.6;
   height: 300px;
-  width:auto;
-  
+  width: 100%;
+  position: relative;
+
+  }
+
+  header {
+    position: relative;
+  }
+
+  h1 {
+    font-size: 50px;
+    width: 700px;
+    margin: auto;
+  }
+
+  .textonimage {
+  position: absolute;
+  bottom:10%;
+  color: black;
+  opacity: 1;
+
+}
+
+.textonimage strong {
+  font-size: 40px;
+}
+
+article {
+  width: 700px;
+  margin: auto;
+}
+
+
+.quote {
+  background-color: rgb(80, 80, 80);
+  margin-left: -50px;
+  margin-right: -50px;
+  padding: 10px;
+  font-family: "Wide Latin", "sans-serif";
+
+}
+
+h2 {
+  color: white;
+  font-size: 50px;
+
+}
+
+p{
+   font-family: "Calibri", "sans-serif";
+   margin-top: 60px;
+   font-size: 18px;
+   font-weight: lighter;
+   letter-spacing: 1px;
+}
+
+.listInP{
+
+  font-family: "Calibri", "sans-serif";
+  font-size: 18px;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  list-style-type: square;
+
+}
+
+h3 {
+font-size: 30px;
+text-transform: uppercase;
+}
+h4 {
+  font-size: 25px;
+}
+h5 {
+  font-size: 20px;
+}
+
+h3, h4, h5 {
+font-weight: lighter;
+}
+
+h5 {
+  margin-top: -30px;
 }

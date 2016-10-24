@@ -1,0 +1,35 @@
+body{
+  font-family: "Calibri", "sans-serif";
+  font-size: 18px;
+  text-align: justify;
+  padding: 20px;
+
+}
+
+.paragraph{
+  background: #fff;
+  max-width: 300px;
+  margin: 0,auto;
+
+
+}
+
+.image1 {
+  float: left;
+
+}
+
+.image2 {
+  float: right;
+
+}
+
+image1, image2{
+  margin: 10px;
+  padding-top: 20px;
+}
+
+hr {
+  border-color: black;
+
+}

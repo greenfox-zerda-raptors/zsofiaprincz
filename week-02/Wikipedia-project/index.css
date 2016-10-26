@@ -1,0 +1,101 @@
+*{
+  background-color: #f9f9f9:
+}
+
+body{
+  display: flex;
+}
+
+h1 {
+  font-family: "Times", "Georgia", "Linux Libertine", "Cambria";
+  font-weight: 300;
+}
+h2, h3, p, table{
+  font-family: "Helvetica Neue", "Helvetica", "Arimo", "Liberation Sans", "Lucida Grande";
+}
+
+
+aside{
+
+      height: 100%;
+      width: 200px;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      margin: 5px 10px 0px 10px;
+  }
+
+  #nav > hr{
+    length: 100px;
+  }
+
+  .logo img{
+    width: 100px;
+    height: auto;;
+    margin-right: 40px;
+  }
+
+  #nav > ul{
+      font-size: 0.75em;
+      list-style-type: none;
+      padding-left: 5px;
+  }
+
+  #nav > ul > li{
+      padding: 2px;
+  }
+
+  #nav > p{
+      font-size: 0.75em;
+      padding: 0px;
+      margin: 10px 0px 0px 0px;
+  }
+
+  #nav > p + ul{
+      padding-left: 10px;
+      margin-top: 0px;
+  }
+
+tbody{
+   width: 222px;
+   height:531px;
+}
+
+table{
+ display: table;
+ border-collapse: separate;
+ border-spacing: 2px;
+ border-color: grey;
+ float: right;
+
+}
+
+.namecard{
+
+ background-color: #f9f9f9;
+ border: 1px solid #aaa;
+ width: 300px;
+ height: 200px;
+ float: right;
+ font-size: 80%;
+ line-height: 1.5em;
+ padding: 0.2em;
+}
+
+.namecard img{
+  width: 200px;
+  height: 250px;
+  float: right;;
+  padding: 10px;
+
+}
+
+.image div{
+  text-align: center;
+  float: inherit;
+  display: inline-block;
+}
+
+.flexcontainer{
+  display: flex;
+}

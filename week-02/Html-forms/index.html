@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type ="text/css" href= "index.css">
+  <title>HTML-forms Week02 Day2</title>
+</head>
+<body>
+
+  <form class="form" action="http://www.cs.tut.fi/cgi-bin/run/~jkorpela/echo.cgi" method="post">
+
+    <header>
+      <h1>Profil</h1>
+    </header>
+
+
+  <div class="maincontainer">
+
+    <div class="leftcontainer">
+
+      <h2>Személyes adatok</h2>
+
+        <label for="name">Név</label><br>
+        <input type="text" id="name" name="user_name" />
+
+        <div class="birthgender">
+
+
+
+      <div class="halfcol">
+
+        <label for="birthdate">Születési éved</label>
+        <input type="date" id="birthdate" value="birthdate">
+
+      </div>
+
+      <div class="halfcol">
+
+        <label>Nemed</label><br>
+
+        <div id="gender">
+
+        <div>
+
+
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male">Férfi</label>
+        </div>
+        <div>
+        <input type="radio"  name="gender" id="female" value="female">
+        <label for="female">Nő</label>
+        </div>
+      </div> <!--end of gender-->
+
+        </div>
+
+        <div class="brand">
+
+          <h3>Milyen márkát szeretsz?</h3>
+
+          <input type="checkbox" name="brand" id="Adidas"value="Adidas">
+          <label for="Adidas">Adidas</label>
+
+          <input type="checkbox" name="brand" id="Apple"value="Apple">
+          <label for="Apple">Apple</label>
+
+          <input type="checkbox" name="brand" id="Coca-Cola"value="Coca-Cola">
+          <label for="Coca-Cola">Coca-Cola</label>
+
+          <input type="checkbox" name="brand" id="Mazda"value="Mazda">
+          <label for="Mazda">Mazda</label>
+
+          <input type="checkbox" name="brand" id="Nike"value="Nike">
+          <label for="Nike">Nike</label>
+
+          <input type="checkbox" name="brand" id="Opel"value="Opel">
+          <label for="Opel">Opel</label>
+
+          <input type="checkbox" name="brand" id="Ray-Ban"value="Ray-Ban">
+          <label for="Ray-Ban">Ray-Ban</label>
+
+          <input type="checkbox" name="brand" id="Starbucks"value="Starbucks">
+          <label for="Starbucks">Starbucks</label>
+
+          <input type="checkbox" name="brand" id="Tesla"value="Tesla">
+          <label for="Tesla">Tesla</label>
+
+          <input type="checkbox" name="brand" id="Yahoo"value="Yahoo">
+          <label for="Yahoo">Yahoo</label>
+
+        <h5>Többet is választhatsz</h5>
+
+        </div>
+
+
+    </div>
+
+    <div class="rightcontainer">
+
+      <h2>Kapcsolat</h2>
+
+      <div class="Phonenumber">
+
+        <label for="phonenumber">Telefonszám</label>
+        <input type="text" id="phonenumber" name="phonenumber">
+
+      </div>
+
+      <div class="email">
+
+        <label for="email">E-mail cím</label>
+        <input type="email" id="email" name="email">
+
+      </div>
+
+      <div class="facebook">
+
+        <label for="facebook">Facebook profilod</label>
+        <input type="url" id="facebook" name="facebook">
+
+      </div>
+
+      <div class="twitter">
+
+        <label for="twitter">Twitter profilod</label>
+        <input type="url" id="twitter" name="twitter">
+
+      </div>
+
+      <div class="house">
+
+        <h3>Milyen házban laksz?</h3>
+
+        <select name="select">
+          <option value="kicsi">Kicsiben</option>
+          <option value="kozepes">Közepesben</option>
+          <option value="nagy">Nagyban</option>
+        </select>
+
+
+      </div>
+
+    </div>
+
+  </div> <!--main container end-->
+
+  <div class="Introduction">
+
+    <label for="introduction">Bemutatkozás</label>
+    <input type="text" id="introduction"  name="introduction">
+
+  </div>
+
+  <div class="cv">
+
+    <h3>CV feltöltése</h3>
+    <h4>FILE KIVÁLASZTÁSA</h4>
+    <p>
+      Elfogadom a felhasználási feltételeket
+    </p>
+
+  </div>
+
+  <div class="buttons">
+
+    <p>
+      MENTÉS
+    </p>
+
+    <p>
+      Űrlap törlése
+    </p>
+
+  </div>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+form {
+  background-color: rgba(221, 214, 204, 1.00);
+  max-width: 820px;
+  max-height: 1000px;
+  font: "Calibri";
+  color: rgba(77, 62, 98, 1.00);
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 100%;
+}
+
+input[type="checkbox"]{
+  width: 15px;
+}
+
+input[type="radio"]{
+  width:10px;
+  border-radius: 50%;
+}
+
+.birthgender {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#gender {
+  display: flex;
+}
+
+h2 {
+  color: white;
+  background-color: rgba(149, 138, 151, 1.00);
+  margin: 0;
+  padding: 15px 20px;
+  font-weight: lighter;
+}
+
+.maincontainer {
+ display: flex;
+ padding:20px;
+ margin: 20px;
+}
+
+.leftcontainer{
+ padding: 5%;
+ width: 50%;
+
+}
+
+ .rightcontainer {
+   padding: 5%;
+   width: 50%;
+}
+
+
+.halfcol {
+  width: 40%;
+  display: block;
+
+}

@@ -1,9 +1,34 @@
-body {
+form {
   background-color: rgba(221, 214, 204, 1.00);
   max-width: 820px;
   max-height: 1000px;
   font: "Calibri";
   color: rgba(77, 62, 98, 1.00);
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 100%;
+}
+
+input[type="checkbox"]{
+  width: 15px;
+}
+
+input[type="radio"]{
+  width:10px;
+  border-radius: 50%;
+}
+
+.birthgender {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#gender {
+  display: flex;
 }
 
 h2 {
@@ -22,7 +47,7 @@ h2 {
 
 .leftcontainer{
  padding: 5%;
-width: 50%;
+ width: 50%;
 
 }
 
@@ -33,15 +58,7 @@ width: 50%;
 
 
 .halfcol {
-  width: 47%;
-  float: left;
-}
+  width: 40%;
+  display: block;
 
-#a12 {
-  float: left;
-  -webkit-column-count: 2;
-}
-
-#a12:after {
-  clear: both;
 }

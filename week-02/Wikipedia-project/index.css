@@ -1,19 +1,33 @@
-*{
-  background-color: #f9f9f9:
-}
+/* *{
+  background-color: #f9f9f9;
+} */
 
 body{
   display: flex;
+  margin: 0;
+  font-size: 14px;
 }
 
-h1 {
+h1 h2{
   font-family: "Times", "Georgia", "Linux Libertine", "Cambria";
+  }
+
+  h1 {
   font-weight: 300;
 }
-h2, h3, p, table{
-  font-family: "Helvetica Neue", "Helvetica", "Arimo", "Liberation Sans", "Lucida Grande";
-}
 
+h2 {
+  font-weight: 400;
+}
+ h3 table p blockquote{
+  font-family: "Helvetica Neue", "Helvetica", "Arimo", "Liberation Sans", "Lucida Grande";
+  line-height: 1.5em;
+}
+p {
+  font-family: "sans-serif", "Helvetica Neue", "Helvetica", "Arimo", "Liberation Sans", "Lucida Grande";
+  line-height: 1.5em;
+
+}
 /*aside part start*/
 
 aside{
@@ -22,31 +36,39 @@ aside{
   width: 200px;
   top: 0;
   left: 0;
-  z-index: 1;
+  text-align: center;
   }
 
 
 
   #nav > hr{
-    length: 100px;
+    width: 60%;
     margin: 0;
     padding-right:20px;
   }
 
-  .logo img{
+  aside img{
     width: 100px;
-    height: auto;;
-    margin-right: 40px;
+    height: auto;
+
+  }
+
+  #nav{
+    text-align: left;
+    padding-left: 20px;
+
   }
 
   #nav > ul{
       font-size: 0.75em;
       list-style-type: none;
       padding-left: 5px;
+
   }
 
   #nav > ul > li{
       padding: 2px;
+
   }
 
   #nav > p{
@@ -66,6 +88,7 @@ aside{
 tbody{
    width: 222px;
    height:531px;
+
 }
 
 table{
@@ -74,6 +97,7 @@ table{
  border-spacing: 2px;
  border-color: grey;
  float: right;
+ margin: 10px;
 
 }
 
@@ -89,25 +113,57 @@ table{
  padding: 0.2em;
 }
 
-.namecard img{
-  width: 200px;
-  height: 250px;
-  float: right;;
-  padding: 10px;
-
+.namehead {
+  text-align: center;
 }
 
-.image div{
+.namehead p{
+  margin-top: 0;
+}
+tr div{
   text-align: center;
-  float: inherit;
   display: inline-block;
+}
+
+th{
+  vertical-align: top;
+  text-align: left;
 }
 
 /*namecard table end*/
 
+/*toc*/
+
+.toc {
+  text-align: left;
+  border: 1px solid #aaa;
+  background-color: #f9f9f9;
+  font-size: 95%;
+  line-height: 1.6em;
+  display: inline-block;
+}
+
+
+.toc ol{
+  counter-reset: item;
+  list-style: none;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.toc LI:before { content: counters(item, ".") " "; counter-increment: item
+
+}
+
+#toctitle{
+  padding-left: 20px;
+}
+
+
+
 .flexcontainer{
   display: flex;
-  padding: 15px;
+  /*padding: 15px;*/
   width: 100%;
   flex-flow: column;
 
@@ -116,6 +172,7 @@ table{
 .maincontainer {
   border-left: 1px solid #b3ecff;
   border-top: 1px solid #b3ecff;
+  padding-left: 10px;
 
 }
 
@@ -125,6 +182,13 @@ header{
   background-color: #f9f9f9;
   display: flex;
   flex-flow: column;
+  /* text-decoration: none; Why is it not working here and why do I have to create a new and more specified css line I don't know*/
+  }
+
+  /*header styling*/
+
+  header a{
+    text-decoration: none;
   }
 
 .toprightlinks{
@@ -134,17 +198,43 @@ header{
   z-index: 100; */
   display: flex;
   justify-content: flex-end;
+  font-size: 80%;
+  padding-bottom: 18px;
+
 }
 
-/*.menuleft{
+.toprightlinks a{
+  padding-right: 10px;
+}
 
-  margin-top: 2.5em;
-  margin-bottom: -2.5em;
-
-} */
 
 .menubar{
   display: flex;
   justify-content: space-between;
   flex-flow: row;
+  padding-bottom: 5px;
+
 }
+
+.menuleft a{
+  padding-left: 10px;
+  font-size: 90%;
+}
+
+.menuright {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menuright {
+  padding-right: 10px;
+}
+form{
+  padding-left: 10px;
+}
+
+.menuright{
+  font-size: 90%;
+}
+
+/*header styling end --- way too long, need to review for simplification*/

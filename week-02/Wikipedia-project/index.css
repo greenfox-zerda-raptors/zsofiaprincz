@@ -14,19 +14,23 @@ h2, h3, p, table{
   font-family: "Helvetica Neue", "Helvetica", "Arimo", "Liberation Sans", "Lucida Grande";
 }
 
+/*aside part start*/
 
 aside{
-
-      height: 100%;
-      width: 200px;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      margin: 5px 10px 0px 10px;
+  background-color: #f9f9f9;
+  height: 100%;
+  width: 200px;
+  top: 0;
+  left: 0;
+  z-index: 1;
   }
+
+
 
   #nav > hr{
     length: 100px;
+    margin: 0;
+    padding-right:20px;
   }
 
   .logo img{
@@ -56,6 +60,9 @@ aside{
       margin-top: 0px;
   }
 
+  /*aside part end*/
+
+  /*namecart table*/
 tbody{
    width: 222px;
    height:531px;
@@ -96,6 +103,48 @@ table{
   display: inline-block;
 }
 
+/*namecard table end*/
+
 .flexcontainer{
   display: flex;
+  padding: 15px;
+  width: 100%;
+  flex-flow: column;
+
+}
+
+.maincontainer {
+  border-left: 1px solid #b3ecff;
+  border-top: 1px solid #b3ecff;
+
+}
+
+/*header start*/
+
+header{
+  background-color: #f9f9f9;
+  display: flex;
+  flex-flow: column;
+  }
+
+.toprightlinks{
+  /*position: absolute;
+  top: 0.33em;
+  right: 0.75em;
+  z-index: 100; */
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*.menuleft{
+
+  margin-top: 2.5em;
+  margin-bottom: -2.5em;
+
+} */
+
+.menubar{
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row;
 }

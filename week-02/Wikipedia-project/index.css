@@ -6,6 +6,7 @@ body{
   display: flex;
   margin: 0;
   font-size: 14px;
+  background-color: #f9f9f9;
 }
 
 h1 h2{
@@ -28,6 +29,10 @@ p {
   line-height: 1.5em;
 
 }
+
+h3{
+  font-weight: 900;
+}
 /*aside part start*/
 
 aside{
@@ -37,6 +42,7 @@ aside{
   top: 0;
   left: 0;
   text-align: center;
+  color: #0645ad;
   }
 
 
@@ -75,6 +81,7 @@ aside{
       font-size: 0.75em;
       padding: 0px;
       margin: 10px 0px 0px 0px;
+      color: black;
   }
 
   #nav > p + ul{
@@ -99,6 +106,7 @@ table{
  float: right;
  margin: 10px;
 
+
 }
 
 .namecard{
@@ -111,6 +119,7 @@ table{
  font-size: 80%;
  line-height: 1.5em;
  padding: 0.2em;
+
 }
 
 .namehead {
@@ -159,6 +168,29 @@ th{
   padding-left: 20px;
 }
 
+/*toc end*/
+
+/*sidestory div*/
+
+.sidestory {
+  float: right;
+  width: 232px;
+  background-color: #f9f9f9;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+  padding: 5px;
+  margin: 5px;
+  clear: both;
+
+}
+
+.captations {
+
+  float: right;
+}
+
+
+
 
 
 .flexcontainer{
@@ -170,11 +202,16 @@ th{
 }
 
 .maincontainer {
+  background-color: white;
   border-left: 1px solid #b3ecff;
   border-top: 1px solid #b3ecff;
+  border-bottom: 1px solid #b3ecff;
   padding-left: 10px;
 
+
 }
+
+
 
 /*header start*/
 
@@ -182,7 +219,7 @@ header{
   background-color: #f9f9f9;
   display: flex;
   flex-flow: column;
-  /* text-decoration: none; Why is it not working here and why do I have to create a new and more specified css line I don't know*/
+
   }
 
   /*header styling*/
@@ -213,28 +250,60 @@ header{
   justify-content: space-between;
   flex-flow: row;
   padding-bottom: 5px;
+  border-left: 1px solid #b3ecff;
 
 }
 
 .menuleft a{
   padding-left: 10px;
   font-size: 90%;
+  border-left: 1px solid #b3ecff;
+}
+
+.menuright a{
+  border-left: 1px solid #b3ecff;
 }
 
 .menuright {
   display: flex;
   justify-content: flex-end;
-}
-
-.menuright {
+  font-size: 90%;
   padding-right: 10px;
 }
+
 form{
   padding-left: 10px;
+  padding-right: 10px;
+
 }
 
-.menuright{
+
+/*header styling end --- way too long, need to review for simplification*/
+
+
+blockquote {
+  padding-left: 30px;
+  line-height: 1.5em;
+  display: block;
+}
+
+footer{
+  font-size: 12px;
+  margin-top: 50px;
+}
+
+ #firstline{
+  margin-top: -5px;
   font-size: 90%;
 }
 
-/*header styling end --- way too long, need to review for simplification*/
+#secondline {
+  padding-left: 25px;
+}
+
+.awards li{
+  font-size: 14px;
+  line-height: 20px;
+
+
+}

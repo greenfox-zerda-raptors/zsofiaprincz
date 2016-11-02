@@ -22,77 +22,84 @@
       <h2>Személyes adatok</h2>
 
         <label for="name">Név</label><br>
-        <input type="text" id="name" name="user_name" />
+        <input type="text" id="name" name="user_name">
 
         <div class="birthgender">
+            <div class="birth">
 
 
 
-      <div class="halfcol">
-
-        <label for="birthdate">Születési éved</label>
-        <input type="date" id="birthdate" value="birthdate">
-
-      </div>
-
-      <div class="halfcol">
-
-        <label>Nemed</label><br>
-
-        <div id="gender">
-
-        <div>
+            <label for="birthdate">Születési éved</label><br>
+            <input type="date" id="birthdate" value="birthdate">
+            </div>
 
 
-        <input type="radio" name="gender" id="male" value="male">
-        <label for="male">Férfi</label>
+          <div class="gender">
+            <label >Nemed</label><br>
+            <div class="genderchoice">
+
+
+
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">Férfi</label>
+
+
+            <input type="radio"  name="gender" id="female" value="female">
+            <label for="female">Nő</label>
+
+            </div>
+
+        </div> <!--end of gender-->
         </div>
-        <div>
-        <input type="radio"  name="gender" id="female" value="female">
-        <label for="female">Nő</label>
-        </div>
-      </div> <!--end of gender-->
-
-        </div>
+          <h3>Milyen márkát szeretsz?</h3>
 
         <div class="brand">
 
-          <h3>Milyen márkát szeretsz?</h3>
+          <div class="column1">
 
-          <input type="checkbox" name="brand" id="Adidas"value="Adidas">
+          <input type="checkbox" name="brand" id="Adidas"value="Adidas"><br>
           <label for="Adidas">Adidas</label>
 
-          <input type="checkbox" name="brand" id="Apple"value="Apple">
+          <input type="checkbox" name="brand" id="Apple"value="Apple"><br>
           <label for="Apple">Apple</label>
 
-          <input type="checkbox" name="brand" id="Coca-Cola"value="Coca-Cola">
+          <input type="checkbox" name="brand" id="Coca-Cola"value="Coca-Cola"><br>
           <label for="Coca-Cola">Coca-Cola</label>
 
-          <input type="checkbox" name="brand" id="Mazda"value="Mazda">
+          <input type="checkbox" name="brand" id="Mazda"value="Mazda"><br>
           <label for="Mazda">Mazda</label>
 
-          <input type="checkbox" name="brand" id="Nike"value="Nike">
+
+
+          <input type="checkbox" name="brand" id="Nike"value="Nike"><br>
           <label for="Nike">Nike</label>
 
-          <input type="checkbox" name="brand" id="Opel"value="Opel">
+          </div>
+
+          <div class="column2">
+
+          <input type="checkbox" name="brand" id="Opel"value="Opel"><br>
           <label for="Opel">Opel</label>
 
-          <input type="checkbox" name="brand" id="Ray-Ban"value="Ray-Ban">
+          <input type="checkbox" name="brand" id="Ray-Ban"value="Ray-Ban"><br>
           <label for="Ray-Ban">Ray-Ban</label>
 
-          <input type="checkbox" name="brand" id="Starbucks"value="Starbucks">
+          <input type="checkbox" name="brand" id="Starbucks"value="Starbucks"><br>
           <label for="Starbucks">Starbucks</label>
 
-          <input type="checkbox" name="brand" id="Tesla"value="Tesla">
+          <input type="checkbox" name="brand" id="Tesla"value="Tesla"><br>
           <label for="Tesla">Tesla</label>
 
-          <input type="checkbox" name="brand" id="Yahoo"value="Yahoo">
+          <input type="checkbox" name="brand" id="Yahoo"value="Yahoo"><br>
           <label for="Yahoo">Yahoo</label>
-
-        <h5>Többet is választhatsz</h5>
 
         </div>
 
+
+
+      </div> <!--end of brand selector -->
+
+        <h5>Többet is választhatsz</h5>
 
     </div>
 
@@ -141,14 +148,17 @@
 
       </div>
 
-    </div>
+    </div> <!--right container end-->
 
   </div> <!--main container end-->
+  <div class="bottom">
+
+
 
   <div class="Introduction">
 
-    <label for="introduction">Bemutatkozás</label>
-    <input type="text" id="introduction"  name="introduction">
+    <label for="introduction">Bemutatkozás</label><br>
+    <textarea id="introduction"  name="introduction" placeholder="Írj magadról pár sort"></textarea>
 
   </div>
 
@@ -156,23 +166,25 @@
 
     <h3>CV feltöltése</h3>
     <h4>FILE KIVÁLASZTÁSA</h4>
-    <p>
-      Elfogadom a felhasználási feltételeket
-    </p>
+
+      <input type="checkbox" name="consent" value="yes">Elfogadom a felhasználási feltételeket<br>
+
 
   </div>
 
   <div class="buttons">
 
-    <p>
+    <button class="save">
       MENTÉS
-    </p>
+    </button>
 
-    <p>
+    <button class="delete">
       Űrlap törlése
-    </p>
+    </button>
 
   </div>
+
+</div> <!-- bottom end -->
 
 </form>
 

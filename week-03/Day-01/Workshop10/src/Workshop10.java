@@ -13,6 +13,6 @@ public class Workshop10 {
             System.out.println("j1 is not between j2 squared and j2 cubed");
         }
 
-        
+
     }
 }

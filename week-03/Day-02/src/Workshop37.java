@@ -14,8 +14,11 @@ public class Workshop37 {
         // The # character should be replacable, hence store it in a variable
 
         String hashtag = "#";
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 9; j++) {
+        for (int i = 0; i < 8; i++) {
+            if (i % 2 != 0) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < 13; j++) {
                 if (j % 2 != 0) {
                     System.out.print(" ");
                 } else {

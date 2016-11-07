@@ -20,11 +20,13 @@ public class Workshop10 {
 
             // Task 2: Print the values of the array to the console
 
-            for (int i =0; i < 3; i++ ) {
+          /*  for (int i =0; i < 3; i++ ) {
 
                     System.out.print(Arrays.toString(colors[i]) + "\n");
-                }
-            }
+                } */
+            System.out.println(Arrays.deepToString(colors));
+        }
+
 
 
         }

@@ -34,6 +34,15 @@ public class Workshop08other {
                 System.out.println();
             }
 
+            // aze megoldasa functionnel
+            //public static int [] [] create2dim Array (int hossz) {
+            //int [] [] result = new int [hossz] [hossz];
+            // for (int =0; i<hossz, i++) {
+                 // for int (int j=0; j<hossz; j++) { // igazabol nem kell ket for loop boven eleg result [i][i] = 1;
+                     // if (i==j) {
+                           // result[i][j] = 1;
+                            // }
+
 
 
         }

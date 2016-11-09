@@ -2,144 +2,110 @@ import java.util.*;
 import java.io.*;
 
 
-
 /**
- * Created by zsofiaprincz on 09/11/16.
- */
+ * Workshop: Revise Bana Exceptions examples
+ * Step through this example.  This is taken directly from Bana Exceptions
+ *
+ * java.lang.RuntimeException : exceptions that can be thrown during the normal
+ * operation of the Java Virtual Machine. These exceptions are your responsibility
+ * as a programmer.
+ *
+ * Common Exceptions
+ * ArithmeticException: An arithmetic operation occurs with no answer (Division by Zero)
+ * ClassNotFoundException: A class is called for that doesn't exist
+ * IllegalArgumentException: A method has been passed an illegal argument
+ * IndexOutOfBoundsException: Thrown when an index for an array, string is called for, but doesn't exist
+ * InputMismatchException: (Part of NoSuchElementException) User enters the wrong data type into a Scanner method
+ * IOException: An I/O operation failed
+ *
+ * Answer these questions:
+ * - What is a Run time error vs a Compile time Error
+ * - How does the program below work
+ *
+ ******************************************************************************************/
+
+import java.util.InputMismatchException;
+import java.util.Scanner; // Library that allows us to capture user input
+import java.util.*; // Allows me to check for InputMismatchException
+import java.io.*; // Allows for system input and output through data streams, serialization and the file system
+
 public class Workshop01 {
 
-    /**
-     * Use the debugger to step through the program and then check the file directory (remember the breakpoint!)
-     * Set the strDirectoryPath below to something that works on your machine
-     * I've commented out the delete for the moment, when uncommenting you need to be careful as it will DELETE the file
-     * named.
-     *
-     * When I ran this, I got the following - note I have the deletes commented out:-
-     File Exists
-     File is readable: true
-     File is writable: true
-     File location: D:\GitHub\m02d1\random.txt  -- this was my working directory and where it wrote 1 file
-     File name: random.txt
-     Parent directory: null
-     File Two Parent Directory: D:\Eric\JavaBits
-     Is this a directory: true
-     Files in Random Directory
-     random.txt
-     Is this a file: true
-     Is this hidden: false
-     Last modified: 1478616979449
-     Size of file: 0
-     New Name: D:\Eric\JavaBits\random.txt
-     *
-     */
-import java.io.*;
+    static Scanner userInput = new Scanner(System.in);
 
-    public class Workshop12 {
+    public static void main(String[] args) {
+        divideByZero(2);
 
-        static String filePath,parentDirectory;
+        int age = checkValidAge();
 
-        static File randomDir, randomFile, randomFile2;
+        while (age != 0) {
+            age = checkValidAge();
+        }
+        System.out.printf("You are %d years old", age);
 
-        public static void main(String[] args){
+        getAFile("./somestuff.txt");
 
-            String strDirectoryPath = "D:/Eric/JavaBits";
-            String strFileName = "random";
-            String strExtension = ".txt";
+    }
 
-            // Creates a File object in memory
-            randomDir = new File(strDirectoryPath); //catch the "memory" bit... nothing has happened YET
+    public static void divideByZero(int a) {
 
-            // Make a directory
-            randomDir.mkdir(); //now it happens
+        try {
+            System.out.println(a / 0);
+        } catch (ArithmeticException e) {
+            System.out.println("no can do\n" + e.getMessage() + "\n" + e.toString() + "\n" );
+//            e.printStackTrace(); // this is its own print statement
+        }
+    }
 
-            // Make a file named random.txt
-            randomFile = new File(strFileName + strExtension);
+    public static int checkValidAge() {
+        System.out.println("Age?");
 
-            // Make a file and define where to save it in the file system
-            randomFile2 = new File(strDirectoryPath + "/" + strFileName + strExtension);
+        try {
+           return userInput.nextInt();
+        } catch (InputMismatchException e) {
+            userInput.next();
+            System.out.println("That isn't a whole number");
+            return 0;
+        }
 
-            // createNewFile and getCanonicalPath have to be called in
-            // a try block to catch IOException
-            try {
+    }
 
-                // createNewFile creates the file in the file system
-                randomFile.createNewFile();
-                randomFile2.createNewFile();
+    public static void getAFile(String fileName) {
+        try {
+		/* If I tried to do this without providing for an exception
+		* I'd get the error Unhandled Exception Type FileNotFoundException
+		* A checked exception is an exception the compiler forces you to protect against
+		*/
+            FileInputStream file = new FileInputStream(fileName);
+        } catch (FileNotFoundException e) {
+            System.out.println("Sorry I couldn't find that file");
+        }
 
-                // Returns the path for the file
-                filePath = randomFile.getCanonicalPath();  // we need this as for the first file we didnt say where
+        // You can catch numerous exceptions (List most specific first
+        catch (IOException e) // Catches any IO Exception
+        {
+            System.out.println("An unknown IO Error Occured");
+        }
 
-            } catch (IOException e) {                  // You have to catch the IOException
-                e.printStackTrace();  // keep it simple and it'll explain it all
-            }
+		/* To ignore an exception do this
+		 * catch (ClassNotFoundException e)
+		 * {}
+		 */
 
-            // Check to see if the file exists in the current directory
-            if (randomFile.exists()){
-                System.out.println("File Exists");
-                System.out.println("File is readable: " + randomFile.canRead());
-                System.out.println("File is writable: " + randomFile.canWrite());
-                System.out.println("File location: " + filePath);
-                System.out.println("File name: " + randomFile.getName());
+		/* Java 7 allows you to catch multiple exceptions at once
+		 * catch (FileNotFoundException | IOException e)
+		 * {}
+		 */
 
-                // Since you created the file without defining a path this returns null
-                System.out.println("Parent directory: " + randomFile.getParent());
+        // This will catch any exception (This should always be last)
+        catch (Exception e) {
+            System.out.println("I catch every exception");
+        }
 
-                // This returns the parent because it was defined
-                parentDirectory = randomFile2.getParent();
-                System.out.println("File Two Parent Directory: " + parentDirectory);
-                System.out.println("Is this a directory: " + randomDir.isDirectory());
-
-                // list provides a string array containing all the files
-                String[] filesInDir = randomDir.list();
-                System.out.println("Files in Random Directory\n");
-                // Use the enhanced for loop to cycle through the files
-                for(String fileName : filesInDir){
-                    System.out.println(fileName + "\n");
-                }
-
-
-                System.out.println("Is this a file: " + randomFile.isFile());
-                System.out.println("Is this hidden: " + randomFile.isHidden());
-
-                System.out.println("Last modified: " + randomFile.lastModified());   // Milliseconds since Jan 1, 1970 when modified
-                System.out.println("Size of file: " + randomFile.length());          // Return size of file
-
-                // Changes the name of the file
-
-                randomFile2.renameTo(new File(strDirectoryPath + "/" + strFileName + "2" + strExtension ));
-                // Output the full path for the file unless the path wasn't defined when the File was created
-                System.out.println("New Name: " + randomFile2.toString());
-
-            } else {
-
-                System.out.println("File Doesn't Exist");
-
-            }
-
-            System.out.println("Will list (delete) the files in " + randomDir.getPath());
-            File[] filesInDir = randomDir.listFiles();
-
-            for(File fileName : filesInDir) {
-                fileName.toString();
-            };
-
-/**  ONLY DO THIS ONCE YOU ARE 100% SURE that the variables are pointing to the test files!!!
- *
- // You call delete to delete a file
- if(randomFile.delete()){  //this will be the file written to the current directory
- System.out.println("File Deleted");
- }
- // I could get an array of File objects from the directory
- File[] filesInDir = randomDir.listFiles();
- for(File fileName : filesInDir){
- fileName.delete();
- }
- // You can only delete a directory if it is empty
- if(randomDir.delete()){
- System.out.println("Directory Deleted");
- }
- **/
-
+        // If used finally is always executed whether there was an exception or not
+        // It is used for clean up work like closing files and database connections
+        finally {
+            System.out.println("");
         }
     }
 }

@@ -25,16 +25,20 @@ public class Workshop01 {
         myCar3.setKm(42521);
         myCar3.setType("Beamon");
 
-        System.out.printf("This " + myCar.getType() +  " is " + myCar.getColor() + " has " + myCar.getSizeEngine() + " cc Engine and clocked " + myCar.getKm() + " km's.\n",
-                "puke" , 1
-        );
+//        System.out.printf("This " + myCar.getType() +  " is " + myCar.getColor() + " has " + myCar.getSizeEngine() + " cc Engine and clocked " + myCar.getKm() + " km's.\n",
+//                "puke" , 1
+//        );
+//
+//        System.out.printf("This " + myCar2.getType() +  " is " + myCar2.getColor() + " has " + myCar2.getSizeEngine() + " cc Engine and clocked " + myCar2.getKm() + " km's.\n",
+//                "puke" , 1
+//        );
+//        System.out.printf("This " + myCar3.getType() +  " is " + myCar3.getColor() + " has " + myCar3.getSizeEngine() + " cc Engine and clocked " + myCar3.getKm() + " km's.\n",
+//                "puke" , 1
+//        );
 
-        System.out.printf("This " + myCar2.getType() +  " is " + myCar2.getColor() + " has " + myCar2.getSizeEngine() + " cc Engine and clocked " + myCar2.getKm() + " km's.\n",
-                "puke" , 1
-        );
-        System.out.printf("This " + myCar3.getType() +  " is " + myCar3.getColor() + " has " + myCar3.getSizeEngine() + " cc Engine and clocked " + myCar3.getKm() + " km's.\n",
-                "puke" , 1
-        );
+        System.out.printf(myCar.toString());
+       System.out.printf(myCar2.toString());
+      System.out.printf(myCar3.toString());
 
     }
 

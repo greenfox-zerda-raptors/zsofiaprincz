@@ -12,7 +12,6 @@ public class Car {
     }
 
 
-
     String getColor() {
         return color;
 
@@ -23,7 +22,7 @@ public class Car {
         return km;
     }
 
-    String getType (){
+    String getType() {
         return type;
     }
 
@@ -43,11 +42,30 @@ public class Car {
         this.type = type;
     }
 
-    @Override
-    public String toString() {
-        return "";
+    public void drive(int km) {
+        if (km < 20) {
+            km = km + km;
+            System.out.printf("brrm, %s just drove around town %s clicks.\n",
+                    type,
+                    km);
+        }
+        if (km < 50) {
+            km = km + km;
+            System.out.printf("brrm, screech, brrm, screech; %s commuted %s clicks.\n",
+                    type,
+                    km);
+        }
     }
-}
 
+        public String toString(){
+            return String.format ("This %s is %s, has %s cc engine and clocked %s km's.\n",
+                type,
+                color,
+                sizeEngine,
+                km);
+        }
+
+
+    }
 
 

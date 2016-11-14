@@ -17,7 +17,7 @@ public class Workshop01 {
 
     static Scanner userInput = new Scanner(System.in);
 
-    public static void Checker() {
+    public static void Checker() throws IOException {
         while (guess != myNumber && counter < 6) {
             System.out.println("guess?");
             guess = userInput.nextInt();
@@ -42,9 +42,13 @@ public class Workshop01 {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("Do you know how I did this Y/N");
+        String answer = userInput.nextLine();
+        System.out.println("Neither do I :), but here you can find the code in a file: " + destinationFile.getCanonicalPath());
+        System.out.println("Thank you Sopi you saved my life and my file");
     }
 
-    public static void main (String [] args){
+    public static void main (String [] args) throws IOException {
 
         //First part
 

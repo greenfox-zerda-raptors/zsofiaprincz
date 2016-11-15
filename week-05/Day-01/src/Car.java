@@ -7,6 +7,11 @@ public class Car {
     private int km;
     private String type;
 
+    public Car (){
+
+
+    }
+
     int getSizeEngine() {
         return sizeEngine;
     }

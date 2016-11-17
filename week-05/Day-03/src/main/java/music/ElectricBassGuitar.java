@@ -5,15 +5,27 @@ package main.java.music;
  */
 public class ElectricBassGuitar extends StringedInstrument {
 
+    public ElectricBassGuitar(){
+        super("ElectricBassGuitar", 4);
+    }
 
-    public ElectricBassGuitar() {
-        numberOfStrings = 4;
-        nameOfInstrument = "ElectricBassGuitar";
-        sound = "Duum-duum-duum";
-    }
     public ElectricBassGuitar(int numberOfStrings) {
-        this.numberOfStrings =numberOfStrings;
+        super("ElectricBassGuitar", numberOfStrings);
     }
+
+    @Override
+    public String sound() {
+        return "DummDumm";
+    }
+
+    //    public ElectricBassGuitar() {
+//        numberOfStrings = 4;
+//        nameOfInstrument = "ElectricBassGuitar";
+//        sound = "Duum-duum-duum";
+//    }
+//    public ElectricBassGuitar(int numberOfStrings) {
+//        this.numberOfStrings =numberOfStrings;
+//    }
 
     public void play(){
         System.out.printf(formatForPlay, nameOfInstrument, numberOfStrings, sound);

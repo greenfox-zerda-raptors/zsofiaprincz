@@ -6,8 +6,17 @@ package main.java.music;
 public abstract class Instrument {
     protected String nameOfInstrument;
 
+    public Instrument (String nameOfInstrument){
+        this.nameOfInstrument = nameOfInstrument;
+    }
+
+
     public abstract void play ();
 
+    public abstract String sound ();
 
-    }
+
+}
+
+
 

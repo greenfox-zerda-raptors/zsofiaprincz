@@ -5,16 +5,22 @@ package main.java.music;
  */
 public class Violin extends StringedInstrument{
 
-    public Violin() {
-        numberOfStrings = 4;
-        nameOfInstrument = "Violin";
-        sound = "Screech";
+    public Violin (){
+        super("Violin",4);
     }
+
+//    public Violin() {
+//        numberOfStrings = 4;
+//        nameOfInstrument = "Violin";
+//        sound = "Screech";
+//    }
 
     public void play(){
-        System.out.printf(formatForPlay, nameOfInstrument, numberOfStrings, sound);
+        System.out.printf(formatForPlay, nameOfInstrument, numberOfStrings, sound());
     }
 
-
-
+    @Override
+    public String sound() {
+        return "screech";
+    }
 }

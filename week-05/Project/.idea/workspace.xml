@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d9d14b2-227d-4965-856e-d77fbc12a317" name="Default" comment="remove feature done">
+    <list default="true" id="3d9d14b2-227d-4965-856e-d77fbc12a317" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Project.iws" />
@@ -655,7 +655,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1479377889129</updated>
-      <workItem from="1479377892833" duration="38785000" />
+      <workItem from="1479377892833" duration="38857000" />
     </task>
     <task id="LOCAL-00001" summary="fisrt commit">
       <created>1479397713338</created>
@@ -685,11 +685,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479475871226</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="remove feature done">
+      <created>1479475987147</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1479475987147</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38785000" />
+    <option name="totallyTimeSpent" value="38857000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="108" y="23" width="1220" height="873" extended-state="0" />

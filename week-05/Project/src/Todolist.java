@@ -12,11 +12,11 @@ public class Todolist {
 
 //list
 
-    public void load(){
+    public void load() {
         try (BufferedReader storedTodoList = new BufferedReader(new FileReader("/Users/zsofiaprincz/Greenfox/zsofiaprincz/week-05/Project/todolist.txt/"))) {
             String Currentline;
             while ((Currentline = storedTodoList.readLine()) != null) {
-                Todoitem nexttodo = new Todoitem(Currentline) ;
+                Todoitem nexttodo = new Todoitem(Currentline);
                 todo.add(nexttodo);
 
 
@@ -37,7 +37,7 @@ public class Todolist {
 
     //add
 
-    public void Add (String v) {
+    public void Add(String v) {
 
         Todoitem nexttodo = new Todoitem(v);
         todo.add(nexttodo);
@@ -53,20 +53,23 @@ public class Todolist {
 //                  }
 
 
-
     //remove
 
     public void Remove(int index) {
-        todo.remove(index-1);
+        todo.remove(index - 1);
     }
 
+    public void remove(String index) {
+        try {
+                todo.remove(Integer.parseInt(index)-1);
+
+              } catch (IndexOutOfBoundsException e) {
+                    System.out.println("Unable to remove: Index is out of bound");
+                 } catch (NumberFormatException e) {
+                    System.out.println("Unable to remove: Index is not a number");
+                  }
 
 
-
-
-
-
-
-
+    }
 }
 

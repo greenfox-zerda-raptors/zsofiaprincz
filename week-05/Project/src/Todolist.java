@@ -15,12 +15,12 @@ public class Todolist {
     public void load(){
         try (BufferedReader storedTodoList = new BufferedReader(new FileReader("/Users/zsofiaprincz/Greenfox/zsofiaprincz/week-05/Project/todolist.txt/"))) {
             String Currentline;
-            if ((Currentline = storedTodoList.readLine()) != null) {
+            while ((Currentline = storedTodoList.readLine()) != null) {
                 Todoitem nexttodo = new Todoitem(Currentline) ;
                 todo.add(nexttodo);
 
-            } else {
-                System.out.println("No todos for today! :)");
+
+//                System.out.println("No todos for today! :)");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -43,6 +43,14 @@ public class Todolist {
         todo.add(nexttodo);
 
     }
+
+//    public void makeCompleted(int i) {
+//             try{
+//                    ToDoItem item = ls.get(i - 1);
+//                   item.setComplete(true);
+//                } catch (IndexOutOfBoundsException e) {
+//                 System.out.println("Unable to complete: Index is out of bound");
+//                  }
 
 
 

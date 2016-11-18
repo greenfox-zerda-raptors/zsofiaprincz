@@ -14,6 +14,7 @@ public class App {
 
         new Texts();
         Todolist firstList = new Todolist();
+        firstList.load();
 
         char cmd = '0';
 
@@ -32,6 +33,10 @@ public class App {
                     firstList.Add(lastinput.substring(4));
 
             }
+
+            //complete
+
+
 
             //remove
 
@@ -60,7 +65,7 @@ public class App {
 
 
             else if (lastinput.equals("list")) {
-                firstList.load();
+
                 firstList.displayTodoList();
             }
 

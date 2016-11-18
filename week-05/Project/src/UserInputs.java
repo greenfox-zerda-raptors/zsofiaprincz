@@ -9,6 +9,7 @@ public class UserInputs {
 
 
     public static String command() {
+        System.out.println("\nWhat would you like to do? Type command: or 0 to exit ");
         String input = userInput.nextLine();
         return input;
     }

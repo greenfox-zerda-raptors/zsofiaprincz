@@ -13,13 +13,56 @@ public class App {
 
 
         new Texts();
+        Todolist firstList = new Todolist();
 
         char cmd = '0';
 
         while(cmd !=0){
-            Scanner newScan = new Scanner();
+
+            //program running
+
+
             String lastinput = UserInputs.command();
-            if (lastinput)
+
+//            firstList.load();
+
+            //add
+
+            if (lastinput.startsWith("a")) {
+                    firstList.Add(lastinput.substring(4));
+
+            }
+
+            //remove
+
+            else if (lastinput.startsWith("r")){
+//                try {
+//
+//                    Scanner removeCommand = new Scanner(System.in);
+//                    int removeIndex = removeCommand.nextInt();
+//                    firstList.Remove(removeIndex - 1);
+//                }
+//                catch (IndexOutOfBoundsException e){
+//                    System.out.println(e.getMessage() + " Unable to complete: Index is out of bound");
+//                }
+
+
+            }
+
+            //help
+
+            else if (lastinput.startsWith("h")){
+                new Texts();
+            }
+
+            //list
+
+
+
+            else if (lastinput.equals("list")) {
+                firstList.load();
+                firstList.displayTodoList();
+            }
 
 
 
@@ -29,13 +72,7 @@ public class App {
 
 
 
-//        //read file
-//        Todolist todolist = new Todolist();
-//        lastinput = UserInputs.command();
 
-//        if next.line("add")
-//
-//        if next.line
 
 
 

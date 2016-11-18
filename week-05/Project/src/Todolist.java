@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -5,18 +8,56 @@ import java.util.ArrayList;
  */
 public class Todolist {
 
-//    public ArrayList<Todoitem> todo = new ArrayList<Todoitem>();
+    public ArrayList<Todoitem> todo = new ArrayList<>();
 
-//    public ArrayList toDoListGenerator(Todoitem v){
-//        todo.add(v);
-//        return null;
-//    }
+//list
+
+    public void load(){
+        try (BufferedReader storedTodoList = new BufferedReader(new FileReader("/Users/zsofiaprincz/Greenfox/zsofiaprincz/week-05/Project/todolist.txt/"))) {
+            String Currentline;
+            if ((Currentline = storedTodoList.readLine()) != null) {
+                Todoitem nexttodo = new Todoitem(Currentline) ;
+                todo.add(nexttodo);
+
+            } else {
+                System.out.println("No todos for today! :)");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void displayTodoList() {
+        for (int i = 0; i < todo.size(); i++) {
+            System.out.println(i + 1 + " - " + todo.get(i));
+        }
 
 
-//
-//    todo.add("Walk the dog");
-//    todo.add("Buy milk");
-//    todo.add("Do homework");
+    }
+
+    //add
+
+    public void Add (String v) {
+
+        Todoitem nexttodo = new Todoitem(v);
+        todo.add(nexttodo);
+
+    }
+
+
+
+    //remove
+
+    public void Remove(int index) {
+        todo.remove(index-1);
+    }
+
+
+
+
+
+
+
 
 
 }

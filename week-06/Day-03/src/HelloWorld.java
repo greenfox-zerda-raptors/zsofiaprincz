@@ -27,7 +27,7 @@ public class HelloWorld extends JFrame{
           setResizable(true);
           JPanel thepanel = new JPanel();
           JLabel label1 = new JLabel("Hello");
-          setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+          this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
           Toolkit tk = Toolkit.getDefaultToolkit();
           Dimension dim = tk.getScreenSize();

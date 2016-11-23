@@ -23,9 +23,22 @@ public class HelloWorld extends JFrame{
       public HelloWorld(){
           this.setSize(400,400);
           this.setTitle("Hello World");
+          setLocationRelativeTo(null);
+          setResizable(true);
           JPanel thepanel = new JPanel();
           JLabel label1 = new JLabel("Hello");
           setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+          Toolkit tk = Toolkit.getDefaultToolkit();
+          Dimension dim = tk.getScreenSize();
+
+          int xPos = (dim.width / 2) - (this.getWidth() / 2);
+
+          int yPos = (dim.height / 2) - (this.getHeight() / 2);
+
+
+          this.setLocation(xPos, yPos);
+
 
 
           String[] hellos = {"Mirëdita", "Ahalan", "Parev", "Zdravei", "Nei Ho", "Dobrý den", "Ahoj", "Goddag", "Goede dag, Hallo", "Hello", "Saluton", "Hei", "Bonjour",

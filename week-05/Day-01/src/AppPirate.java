@@ -5,13 +5,15 @@ public class AppPirate {
 
     public static void main(String[] args) {
         Pirate pirate = new Pirate ();
-        pirate.drinkSomeRum();
+
+        System.out.println(pirate.drinkSomeRum());
+
         System.out.println(pirate.howItsGoingMate());
 
-        pirate.drinkSomeRum();
-        pirate.drinkSomeRum();
-        pirate.drinkSomeRum();
-        pirate.drinkSomeRum();
+        System.out.println(pirate.drinkSomeRum());
+        System.out.println(pirate.drinkSomeRum());
+        System.out.println(pirate.drinkSomeRum());
+        System.out.println(pirate.drinkSomeRum());
 
         System.out.println(pirate.howItsGoingMate());
 
@@ -20,7 +22,7 @@ public class AppPirate {
 
         System.out.println();
 
-        System.out.println();
+        System.out.println("Is alive: " + pirate.getIsAlive());
 
 
     }

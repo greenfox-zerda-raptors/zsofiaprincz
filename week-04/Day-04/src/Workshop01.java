@@ -42,9 +42,21 @@ public class Workshop01 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Do you know how I did this Y/N");
+
+        System.out.println("Do you know how I did this ? Y/N");
+        System.in.read();
         String answer = userInput.nextLine();
+        if (answer == "Y") {
+            System.out.println("Okay, thank you bye");
+            System.exit(0);
+        } else if (answer == "N") {
+
+        }
         System.out.println("Neither do I :), but here you can find the code in a file: " + destinationFile.getCanonicalPath());
+
+        {
+
+        }
         System.out.println("Thank you Sopi you saved my life and my file");
     }
 

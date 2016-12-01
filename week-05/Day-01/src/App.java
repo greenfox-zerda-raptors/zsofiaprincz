@@ -1,3 +1,5 @@
+import static java.awt.Color.red;
+
 /**
  * Created by zsofiaprincz on 14/11/16.
  */
@@ -6,9 +8,9 @@ public class App {
     // App.java
 
     public static void main(String[] args){
-        Car myCar = new Car();
-        Car myCar2 = new Car();
-        Car myCar3 = new Car();
+        Car myCar = new Car("Mazda", "red", 1600, 12312);
+        Car myCar2 = new Car("Ford", "silver", 2500, 15312);
+        Car myCar3 = new Car("Beamon", "green", 2800, 42521);
 
 
 //        myCar.color = "red";
@@ -29,9 +31,9 @@ public class App {
 
 
 
-//        System.out.printf(myCar.toString());
-//        System.out.printf(myCar2.toString());
-//        System.out.printf(myCar3.toString());
+        System.out.printf(myCar.toString());
+        System.out.printf(myCar2.toString());
+        System.out.printf(myCar3.toString());
     }
 }
 

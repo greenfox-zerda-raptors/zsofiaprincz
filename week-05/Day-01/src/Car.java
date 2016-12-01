@@ -7,45 +7,66 @@ public class Car {
     private int km;
     private String type;
 
-    public Car (){
+    public Car (String type, String color, int sizeEngine, int km ){
+            getType();
+            getColor();
+        getSizeEngine();
+        getKm();
+
 
 
     }
 
-    int getSizeEngine() {
+    public int getSizeEngine() {
         return sizeEngine;
     }
 
-
-    String getColor() {
+    public String getColor() {
         return color;
-
     }
 
-
-    int getKm() {
+    public int getKm() {
         return km;
     }
 
-    String getType() {
+    public String getType() {
         return type;
     }
 
-    public void setSizeEngine(int sizeEngine) {
-        this.sizeEngine = sizeEngine;
-    }
+    //    int getSizeEngine() {
+//        return sizeEngine;
+//    }
+//
+//
+//    String getColor() {
+//        return color;
+//
+//    }
+//
+//
+//    int getKm() {
+//        return km;
+//    }
+//
+//    String getType() {
+//        return type;
+//    }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public void setKm(int km) {
-        this.km = km;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
+//    public void setSizeEngine(int sizeEngine) {
+//        this.sizeEngine = sizeEngine;
+//    }
+//
+//    public void setColor(String color) {
+//        this.color = color;
+//    }
+//
+//    public void setKm(int km) {
+//        this.km = km;
+//    }
+//
+//    public void setType(String type) {
+//        this.type = type;
+//    }
 
     public void drive(int km) {
         if (km < 20) {
@@ -63,11 +84,11 @@ public class Car {
     }
 
         public String toString(){
-            return String.format ("This %s is %s, has %s cc engine and clocked %s km's.\n",
-                type,
-                color,
-                sizeEngine,
-                km);
+            return String.format ("This %s is %s, has %d cc engine and clocked %d km's.\n",
+                getType(),
+                getColor(),
+                getSizeEngine(),
+                getKm());
         }
 
 

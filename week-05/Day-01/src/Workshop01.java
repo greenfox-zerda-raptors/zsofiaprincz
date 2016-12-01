@@ -5,25 +5,25 @@ public class Workshop01 {
 
     public static void main(String[] args) {
 
-        Car myCar = new Car();
-        Car myCar2 = new Car();
-        Car myCar3 = new Car();
-
-
-        myCar.setColor("red");
-        myCar.setSizeEngine(1600);
-        myCar.setKm(12312);
-        myCar.setType("Mazda");
-
-        myCar2.setColor("silver");
-        myCar2.setSizeEngine(2500);
-        myCar2.setKm(152312);
-        myCar2.setType("Ford");
-
-        myCar3.setColor("green");
-        myCar3.setSizeEngine(2800);
-        myCar3.setKm(42521);
-        myCar3.setType("Beamon");
+//        Car myCar = new Car();
+//        Car myCar2 = new Car();
+//        Car myCar3 = new Car();
+//
+//
+//        myCar.setColor("red");
+//        myCar.setSizeEngine(1600);
+//        myCar.setKm(12312);
+//        myCar.setType("Mazda");
+//
+//        myCar2.setColor("silver");
+//        myCar2.setSizeEngine(2500);
+//        myCar2.setKm(152312);
+//        myCar2.setType("Ford");
+//
+//        myCar3.setColor("green");
+//        myCar3.setSizeEngine(2800);
+//        myCar3.setKm(42521);
+//        myCar3.setType("Beamon");
 
 //        System.out.printf("This " + myCar.getType() +  " is " + myCar.getColor() + " has " + myCar.getSizeEngine() + " cc Engine and clocked " + myCar.getKm() + " km's.\n",
 //                "puke" , 1
@@ -36,9 +36,9 @@ public class Workshop01 {
 //                "puke" , 1
 //        );
 
-        System.out.printf(myCar.toString());
-       System.out.printf(myCar2.toString());
-      System.out.printf(myCar3.toString());
+//        System.out.printf(myCar.toString());
+//       System.out.printf(myCar2.toString());
+//      System.out.printf(myCar3.toString());
 
     }
 

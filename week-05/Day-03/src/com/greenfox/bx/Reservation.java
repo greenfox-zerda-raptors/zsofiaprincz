@@ -22,7 +22,8 @@ public class Reservation implements Reservationy {
 
 
     public Reservation(String s) {
-        this.dowBooking = dowBooking;
+        this.dowBooking = s
+        ;
         this.codeBooking = randomZeroToZ(8);
 
 
@@ -69,5 +70,11 @@ public class Reservation implements Reservationy {
         return true;
     }
 
-
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "dowBooking='" + dowBooking + '\'' +
+                ", codeBooking='" + codeBooking + '\'' +
+                '}';
+    }
 }

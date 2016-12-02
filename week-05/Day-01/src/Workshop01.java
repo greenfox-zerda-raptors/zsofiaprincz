@@ -1,45 +1,39 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+
 /**
  * Created by zsofiaprincz on 14/11/16.
  */
 public class Workshop01 {
 
-    public static void main(String[] args) {
 
-//        Car myCar = new Car();
-//        Car myCar2 = new Car();
-//        Car myCar3 = new Car();
-//
-//
-//        myCar.setColor("red");
-//        myCar.setSizeEngine(1600);
-//        myCar.setKm(12312);
-//        myCar.setType("Mazda");
-//
-//        myCar2.setColor("silver");
-//        myCar2.setSizeEngine(2500);
-//        myCar2.setKm(152312);
-//        myCar2.setType("Ford");
-//
-//        myCar3.setColor("green");
-//        myCar3.setSizeEngine(2800);
-//        myCar3.setKm(42521);
-//        myCar3.setType("Beamon");
 
-//        System.out.printf("This " + myCar.getType() +  " is " + myCar.getColor() + " has " + myCar.getSizeEngine() + " cc Engine and clocked " + myCar.getKm() + " km's.\n",
-//                "puke" , 1
-//        );
-//
-//        System.out.printf("This " + myCar2.getType() +  " is " + myCar2.getColor() + " has " + myCar2.getSizeEngine() + " cc Engine and clocked " + myCar2.getKm() + " km's.\n",
-//                "puke" , 1
-//        );
-//        System.out.printf("This " + myCar3.getType() +  " is " + myCar3.getColor() + " has " + myCar3.getSizeEngine() + " cc Engine and clocked " + myCar3.getKm() + " km's.\n",
-//                "puke" , 1
-//        );
+         static ArrayList<String> colors = new ArrayList<>(Arrays.asList("white", "blue", "red", "silver", "black", "green", "banana"));
+         static ArrayList<String> makes = new ArrayList<>(Arrays.asList("toyota", "mazda", "bmw", "vw", "opel", "suzuki", "ford", "mercedes"));
+         static ArrayList<Integer> engineSizes = new ArrayList<>(Arrays.asList(1100, 1400, 1600, 1800, 2500));
+         static ArrayList<Car> lsCars = new ArrayList<>(10);
+         static Random random = new Random();
+         static String color;
+         static String make;
+         static int engineSize;
 
-//        System.out.printf(myCar.toString());
-//       System.out.printf(myCar2.toString());
-//      System.out.printf(myCar3.toString());
+        public static void main(String[] args) {
+            System.out.println("Number of Cars Available = " + Car.getCountCar());
+            for (int i = 0; i < 10; i++) {
+                color = colors.get(random.nextInt(colors.size()));
+                make = makes.get(random.nextInt(makes.size()));
+                engineSize = engineSizes.get(random.nextInt(engineSizes.size()));
+                lsCars.add(i, new Car(color, engineSize, make));
+                System.out.println(Car.toString(lsCars.get(i)));
+            }
+            lsCars.get(0).drive(25);
+            lsCars.get(1).drive(120);
+            System.out.println(lsCars.size());
+            System.out.println("Number of Cars Available = " + Car.getCountCar());
+        }
+
 
     }
 
-}
+

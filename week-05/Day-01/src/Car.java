@@ -2,19 +2,36 @@
 public class Car {
     //Add somethings here to create a car and some fields
 
-    private int sizeEngine;
-    private String color;
-    private int km;
-    private String type;
+    private int sizeEngine = 0;
+    private String color = "";
+    private int km = 0;
+    private String type = "";
+    private static int countCar = -1;
 
-    public Car (String type, String color, int sizeEngine, int km ){
-            getType();
-            getColor();
-        getSizeEngine();
-        getKm();
+    public Car(String type, String color, int sizeEngine, int km) {
+        setType(type);
+        setColor(color);
+        setSizeEngine(sizeEngine);
+        setKm(km);
+        countCar++;
+
+
+    }
 
 
 
+    public void setSizeEngine(int sizeEngine) {
+        this.sizeEngine = sizeEngine;
+    }
+
+
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setKm(int km) {
+        this.km = km;
     }
 
     public int getSizeEngine() {
@@ -33,40 +50,10 @@ public class Car {
         return type;
     }
 
-    //    int getSizeEngine() {
-//        return sizeEngine;
-//    }
-//
-//
-//    String getColor() {
-//        return color;
-//
-//    }
-//
-//
-//    int getKm() {
-//        return km;
-//    }
-//
-//    String getType() {
-//        return type;
-//    }
+    public static int getCountCar() {
+        return countCar;
+    }
 
-//    public void setSizeEngine(int sizeEngine) {
-//        this.sizeEngine = sizeEngine;
-//    }
-//
-//    public void setColor(String color) {
-//        this.color = color;
-//    }
-//
-//    public void setKm(int km) {
-//        this.km = km;
-//    }
-//
-//    public void setType(String type) {
-//        this.type = type;
-//    }
 
     public void drive(int km) {
         if (km < 20) {
@@ -83,15 +70,23 @@ public class Car {
         }
     }
 
-        public String toString(){
-            return String.format ("This %s is %s, has %d cc engine and clocked %d km's.\n",
+
+    public String toString() {
+        return String.format("This %s is %s, has %d cc engine and clocked %d km's.\n",
                 getType(),
                 getColor(),
                 getSizeEngine(),
                 getKm());
-        }
-
-
     }
+
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+}
+
+
+
 
 

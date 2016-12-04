@@ -1,7 +1,7 @@
 /**
  * Created by zsofiaprincz on 04/12/16.
  */
-public class Account {
+public abstract class Account {
 
     private double balance;
     private int accountNumber;

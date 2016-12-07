@@ -1,62 +1,57 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 import java.util.ArrayList;
 
-/**
- * Created by zsofiaprincz on 05/12/16.
- */
-public class Board extends JComponent {
-
-    ArrayList<GameObject> gameObjects;
-
-    String [][] map = new String[][]{
-            {"floor","floor","floor","wall","floor","wall","floor","floor","floor","floor"},
-            {"floor","floor","floor","wall","floor","wall","floor","floor","floor","floor"},
-            {"floor","wall","wall","wall","floor","wall","floor","floor","floor","floor"},
-            {"floor","floor","floor","floor","floor","wall","floor","floor","floor","floor"},
-            {"wall","wall","wall","wall","floor","wall","wall","wall","wall","floor"},
-            {"floor","wall","floor","wall","floor","floor","floor","floor","wall","floor"},
-            {"floor","wall","floor","wall","floor","floor","floor","floor","wall","floor"},
-            {"floor","floor","floor","floor","floor","wall","wall","floor","wall","floor"},
-            {"floor","wall","wall","wall","floor","floor","floor","floor","wall","floor"},
-            {"floor","floor","floor","wall","floor","wall","wall","floor","wall","floor"},
-            {"floor","wall","floor","wall","floor","wall","floor","floor","floor","floor"}
 
 
-    };
+public class Board extends JPanel implements KeyListener{
+    GameObject myHero;
+    Area myArea;
+    public Board()  {
 
-    public Board() {
-
-        this.setPreferredSize(new Dimension(720, 720));
-        this.setVisible(true);
-
-        for(int i=0;i<10;i++){
-            for (int j=0;j<11;j++){
-
-                if (map[i][j]=="wall"){
-
-                     gameObjects.add(new Wall(i,j));
-            } else {
-                    gameObjects.add(new Floor(i,j));
-                }
+        myArea = new Area();
+        myHero = new Hero(0,0);
+        addKeyListener(this);
+        setFocusable(true);
+        // set the size of your draw board
+        setPreferredSize(new Dimension(720, 900));
+        setVisible(true);
+    }
+    @Override
+    public void keyPressed(KeyEvent e) {
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_DOWN : {
+                System.out.println("down pressed ");
+//                    myHero = new Hero(1,0);
+                break;
+            }
+            case KeyEvent.VK_RIGHT : {
+                break;
+            }
+            default:{
+                break;
+            }
         }
+        repaint();
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        // TODO Auto-generated method stub
 
     }
 
     @Override
-    public void paint(Graphics graphics) {
-        for (GameObject gameObject : gameObjects){
-            gameObject.draw(graphics);
-        }
-
-
-
+    public void keyTyped(KeyEvent e) {
     }
 
-
-
-
-
-
-
-}
+    @Override
+    public void paint(Graphics graphics){
+//        super.paint(graphics);
+        // here you have a 720x900 canvas
+        // you can create and draw an image using the class below e.g.
+        myArea.draw(graphics);
+        myHero.draw(graphics);
+    }//paint
+}//Board

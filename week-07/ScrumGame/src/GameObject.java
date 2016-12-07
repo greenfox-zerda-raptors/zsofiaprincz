@@ -1,13 +1,12 @@
 import javax.imageio.ImageIO;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by zsofiaprincz on 05/12/16.
- */
-public class GameObject {
+
+public abstract class GameObject {
 
     BufferedImage image;
     int posX, posY;
@@ -20,12 +19,8 @@ public class GameObject {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }// cons GameObject
 
-    }
+    abstract public void draw(Graphics graphics);
 
-    public void draw(Graphics graphics) {
-        if (image != null) {
-            graphics.drawImage(image, posX*72, posY*72, null);
-        }
-    }
-}
+}// GameObject

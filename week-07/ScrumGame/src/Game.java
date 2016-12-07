@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class Game extends JFrame implements ActionListener{
+public class Game extends JFrame{
     public Game() {
         //Create and set up the window.
         new JFrame("maszkalos"); // JFrame Game =
@@ -22,8 +22,5 @@ public class Game extends JFrame implements ActionListener{
 
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
 
-    }
 }

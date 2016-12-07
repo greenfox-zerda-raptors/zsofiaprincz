@@ -6,9 +6,10 @@ import java.util.ArrayList;
  */
 public class Area {
     ArrayList<GameObject> tiles;
+    int [][] map;
 
     public Area() {
-        int[][] map = new int[][]{
+        map = new int[][]{
                 {0, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                 {0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 1, 1, 0, 1, 0, 0},
@@ -40,9 +41,13 @@ public class Area {
             tile.draw(graphics);
         }
     }
-}//class Area
 
-// ebben kell lennie az alapterkepnek
+    public int[][] getMap() {
+        return map;
+    }
+}
+
+
 
 
 

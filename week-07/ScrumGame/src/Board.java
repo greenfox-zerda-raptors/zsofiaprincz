@@ -1,17 +1,23 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
+import java.util.ArrayList;
 
 
 public class Board extends JPanel implements KeyListener{
     Hero myHero;
     Area myArea;
+    Boss myBoss;
+    ArrayList<Skeleton> skeletons;
 
     String heroDownImg = "images/hero-down.png";
     String heroUpImg = "images/hero-up.png";
     String heroLeftImg = "images/hero-left.png";
     String heroRightImg = "images/hero-right.png";
+
+    String skeletonImg = "images/skeleton.png";
+    String bossImg = "images/boss.png";
+
 
 
     public Board()  {

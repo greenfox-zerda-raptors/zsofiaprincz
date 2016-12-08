@@ -33,19 +33,23 @@ public class Board extends JPanel implements KeyListener{
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_UP : {
-                myHero.move(0,-1,heroUpImg,myArea.getMap());
+                if (myArea.ifTileIsMoveable(myHero.posX, myHero.posY-1))
+                myHero.move(0,-1,heroUpImg);
                 break;
             }
             case KeyEvent.VK_DOWN : {
-                myHero.move(0,1,heroDownImg,myArea.getMap());
+                if (myArea.ifTileIsMoveable(myHero.posX,myHero.posY+1))
+                myHero.move(0,1,heroDownImg);
                 System.out.println("down pressed ");
                 break;
             }
             case KeyEvent.VK_RIGHT : {
-                myHero.move(1,0,heroRightImg,myArea.getMap());
+                if (myArea.ifTileIsMoveable(myHero.posX+1,myHero.posY))
+                myHero.move(1,0,heroRightImg);
                 break;
             }case KeyEvent.VK_LEFT : {
-                myHero.move(-1,0,heroLeftImg,myArea.getMap());
+                if (myArea.ifTileIsMoveable(myHero.posX-1,myHero.posY))
+                myHero.move(-1,0,heroLeftImg);
                 break;
             }
             default:{

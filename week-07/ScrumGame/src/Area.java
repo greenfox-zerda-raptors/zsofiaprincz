@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Created by zoloe on 2016. 12. 07..
  */
 public class Area {
-    ArrayList<GameObject> tiles;
+    ArrayList<Tile> tiles;
     int [][] map;
 
     public Area() {
@@ -42,8 +42,24 @@ public class Area {
         }
     }
 
-    public int[][] getMap() {
-        return map;
+    public String getTilePositionAndisMoveable(int x, int y) {
+        try {
+            return Boolean.toString(tiles.get(10*y+x).moveable) + " " +
+                    tiles.indexOf(tiles.get(10*y+x)) ;
+        }catch (Exception e){}
+        return "fuck";
+    }
+
+
+
+    public boolean ifTileIsMoveable (int posX, int posY){
+        boolean out;
+        if ( posX >= 0 && posX <= 9 && posY >= 0 && posY <= 9){ //check if we stay inside the board
+            out = tiles.get(10 * posY + posX).moveable; //check if its a wall or a floor
+        }else {
+            out =false;
+        }
+        return out;
     }
 }
 

@@ -2,13 +2,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 
-public class Board extends JPanel implements KeyListener{
+public class Board extends JPanel implements KeyListener {
     Hero myHero;
     Area myArea;
     Boss myBoss;
-    ArrayList<Skeleton> skeletons;
+
+
+    ArrayList<Character> enemies ;
+
 
     String heroDownImg = "images/hero-down.png";
     String heroUpImg = "images/hero-up.png";
@@ -19,46 +23,50 @@ public class Board extends JPanel implements KeyListener{
     String bossImg = "images/boss.png";
 
 
-
-    public Board()  {
+    public Board() {
 
         myArea = new Area();
-        myHero = new Hero(0,0);
+        myHero = new Hero(0, 0);
+        myBoss = new Boss (4,4);
         addKeyListener(this);
         setFocusable(true);
         setPreferredSize(new Dimension(720, 900));
         setVisible(true);
+        enemies = enemyCreation();
+
     }
 
 
     public void addNotify() {
-       super.addNotify();
+        super.addNotify();
         requestFocus();
     }
+
     @Override
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
-            case KeyEvent.VK_UP : {
-                if (myArea.ifTileIsMoveable(myHero.posX, myHero.posY-1))
-                myHero.move(0,-1,heroUpImg);
+            case KeyEvent.VK_UP: {
+                if (myArea.ifTileIsMoveable(myHero.posX, myHero.posY - 1))
+                    myHero.move(0, -1, heroUpImg);
                 break;
             }
-            case KeyEvent.VK_DOWN : {
-                if (myArea.ifTileIsMoveable(myHero.posX,myHero.posY+1))
-                myHero.move(0,1,heroDownImg);
+            case KeyEvent.VK_DOWN: {
+                if (myArea.ifTileIsMoveable(myHero.posX, myHero.posY + 1))
+                    myHero.move(0, 1, heroDownImg);
                 System.out.println("down pressed ");
                 break;
             }
-            case KeyEvent.VK_RIGHT : {
-                if (myArea.ifTileIsMoveable(myHero.posX+1,myHero.posY))
-                myHero.move(1,0,heroRightImg);
-                break;
-            }case KeyEvent.VK_LEFT : {
-                if (myArea.ifTileIsMoveable(myHero.posX-1,myHero.posY))
-                myHero.move(-1,0,heroLeftImg);
+            case KeyEvent.VK_RIGHT: {
+                if (myArea.ifTileIsMoveable(myHero.posX + 1, myHero.posY))
+                    myHero.move(1, 0, heroRightImg);
                 break;
             }
-            default:{
+            case KeyEvent.VK_LEFT: {
+                if (myArea.ifTileIsMoveable(myHero.posX - 1, myHero.posY))
+                    myHero.move(-1, 0, heroLeftImg);
+                break;
+            }
+            default: {
                 break;
             }
         }
@@ -77,8 +85,44 @@ public class Board extends JPanel implements KeyListener{
     }
 
     @Override
-    public void paint(Graphics graphics){
+    public void paint(Graphics graphics) {
         myArea.draw(graphics);
         myHero.draw(graphics);
+        myBoss.draw(graphics);
+
+        for (Character enemy: enemies){
+            enemy.draw(graphics);
+        }
     }
+
+    public ArrayList<Character> enemyCreation() {
+
+        ArrayList<Character> enemies = new ArrayList<>();
+        Random random = new Random();
+        int numberofSkeletons = 3 + random.nextInt(4);
+        int randomPosX;
+        int randomPosY;
+        for (int i = 0; i < numberofSkeletons; i++) {
+            randomPosX = random.nextInt(10);
+            randomPosY = random.nextInt(10);
+            boolean occupied = myArea.isOccupied(randomPosX, randomPosY);
+            while (occupied == true) {
+
+                randomPosX = random.nextInt(10);
+                randomPosY = random.nextInt(10);
+                occupied = myArea.isOccupied(randomPosX, randomPosY);
+
+            }
+            Skeleton skeleton = new Skeleton(randomPosX, randomPosY);
+            enemies.add(skeleton);
+
+
+        }
+
+            return enemies;
+    }
+
+
+
+
 }

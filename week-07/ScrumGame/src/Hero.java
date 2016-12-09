@@ -18,11 +18,11 @@ public class Hero extends Character {
 
 
 
-    public void draw(Graphics graphics) {
-        if (image != null) {
-            graphics.drawImage(image, posX * 72, posY * 72, null);
-        }
-    }// draw
+//    public void draw(Graphics graphics) {
+//        if (image != null) {
+//            graphics.drawImage(image, posX * 72, posY * 72, null);
+//        }
+//    }// draw
 
     public void move(int x, int y, String filename) {
         posX += x;

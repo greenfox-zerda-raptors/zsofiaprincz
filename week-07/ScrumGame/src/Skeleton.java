@@ -15,9 +15,7 @@ public class Skeleton extends Character {
 
     }
 
-//    public void draw(Graphics graphics) {
-//        if (image != null) {
-//            graphics.drawImage(image, posX * 72, posY * 72, null);
-//        }
-//    }
+    @Override
+    public void drawString(Graphics graphics) {
+        graphics.drawString(toString(),2,790);    }
 }

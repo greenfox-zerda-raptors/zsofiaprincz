@@ -77,5 +77,8 @@ public class Character extends GameObject {
         return getClass().getSimpleName() + String.format("HP: %d/ | DP: %d | SP: %d", healthPoint, defendPoint, strikePoint);
     }
 
+    public void drawString(Graphics graphics){
+    }
+
     }
 

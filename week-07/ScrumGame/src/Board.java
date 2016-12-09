@@ -21,6 +21,7 @@ public class Board extends JPanel implements KeyListener {
 
     String skeletonImg = "images/skeleton.png";
     String bossImg = "images/boss.png";
+    String deadImg = "images/skull.png";
 
 
     public Board() {
@@ -92,6 +93,7 @@ public class Board extends JPanel implements KeyListener {
 
     @Override
     public void paint(Graphics graphics) {
+        super.paint(graphics);
         myArea.draw(graphics);
         myHero.draw(graphics);
         myBoss.draw(graphics);
@@ -100,6 +102,11 @@ public class Board extends JPanel implements KeyListener {
             enemy.draw(graphics);
         }
         graphics.drawString(myHero.toString(),2,750);
+
+        Character sameTileCheck = onSameTile();
+        if (sameTileCheck!=null){
+            sameTileCheck.drawString(graphics);
+        }
 
     }
 
@@ -133,7 +140,7 @@ public class Board extends JPanel implements KeyListener {
     public Character onSameTile() {
 
         for (Character randomSkeleton : enemies) {
-            if (myHero.getPosX() == randomSkeleton.getPosX() && myHero.getPosY() == randomSkeleton.getPosY()) ;
+            if (myHero.getPosX() == randomSkeleton.getPosX() && myHero.getPosY() == randomSkeleton.getPosY())
             {
                 return randomSkeleton;
 

@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -47,6 +48,34 @@ public class Character extends GameObject {
 
 
         }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
+    public void strike (Character anyCharacter){
+                if (anyCharacter != null && this.strikePoint > anyCharacter.defendPoint) {
+                anyCharacter.healthPoint -= this.strikePoint - anyCharacter.defendPoint;
+                if (anyCharacter.healthPoint <= 0){
+                    anyCharacter.setAlive(false);
+                }
+            }
+                else {
+                anyCharacter.healthPoint =- this.strikePoint - anyCharacter.defendPoint;
+                if (this.healthPoint <= 0){
+                    this.setAlive(false);
+                }
+            }
+
+        }
+
+
+
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + String.format("HP: %d/ | DP: %d | SP: %d", healthPoint, defendPoint, strikePoint);
+    }
 
     }
 

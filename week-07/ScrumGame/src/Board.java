@@ -66,6 +66,12 @@ public class Board extends JPanel implements KeyListener {
                     myHero.move(-1, 0, heroLeftImg);
                 break;
             }
+            case KeyEvent.VK_SPACE: {
+                Character enemy = onSameTile();
+                if(enemy!=null){
+                    myHero.strike(enemy);
+                }
+            }
             default: {
                 break;
             }
@@ -93,6 +99,8 @@ public class Board extends JPanel implements KeyListener {
         for (Character enemy : enemies) {
             enemy.draw(graphics);
         }
+        graphics.drawString(myHero.toString(),2,750);
+
     }
 
     public ArrayList<Character> enemyCreation() {
@@ -122,19 +130,19 @@ public class Board extends JPanel implements KeyListener {
         return enemies;
     }
 
-    public boolean onSameTile() {
+    public Character onSameTile() {
 
         for (Character randomSkeleton : enemies) {
             if (myHero.getPosX() == randomSkeleton.getPosX() && myHero.getPosY() == randomSkeleton.getPosY()) ;
             {
-                return true;
+                return randomSkeleton;
 
             }
         }
-        if (myHero.getPosX() == myBoss.getPosX() && myHero.getPosY() == myBoss.getPosY());{
-                return true;
+        if (myHero.getPosX() == myBoss.getPosX() && myHero.getPosY() == myBoss.getPosY()) {
+                return myBoss;
             }
-
+        return null;
     }
 
 }

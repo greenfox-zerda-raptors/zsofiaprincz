@@ -11,7 +11,7 @@ public class Board extends JPanel implements KeyListener {
     Boss myBoss;
 
 
-    ArrayList<Character> enemies ;
+    ArrayList<Character> enemies;
 
 
     String heroDownImg = "images/hero-down.png";
@@ -27,7 +27,7 @@ public class Board extends JPanel implements KeyListener {
 
         myArea = new Area();
         myHero = new Hero(0, 0);
-        myBoss = new Boss (4,4);
+        myBoss = new Boss(4, 4);
         addKeyListener(this);
         setFocusable(true);
         setPreferredSize(new Dimension(720, 900));
@@ -90,7 +90,7 @@ public class Board extends JPanel implements KeyListener {
         myHero.draw(graphics);
         myBoss.draw(graphics);
 
-        for (Character enemy: enemies){
+        for (Character enemy : enemies) {
             enemy.draw(graphics);
         }
     }
@@ -119,10 +119,22 @@ public class Board extends JPanel implements KeyListener {
 
         }
 
-            return enemies;
+        return enemies;
     }
 
+    public boolean onSameTile() {
 
+        for (Character randomSkeleton : enemies) {
+            if (myHero.getPosX() == randomSkeleton.getPosX() && myHero.getPosY() == randomSkeleton.getPosY()) ;
+            {
+                return true;
 
+            }
+        }
+        if (myHero.getPosX() == myBoss.getPosX() && myHero.getPosY() == myBoss.getPosY());{
+                return true;
+            }
+
+    }
 
 }

@@ -19,7 +19,15 @@ public abstract class GameObject {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }// cons GameObject
+    }
+
+    public int getPosX() {
+        return posX;
+    }
+
+    public int getPosY() {
+        return posY;
+    }
 
     abstract public void draw(Graphics graphics);
 

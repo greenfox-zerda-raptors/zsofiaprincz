@@ -4,11 +4,19 @@
 public abstract class Account {
 
     private double balance;
-    private int accountNumber;
+    public int accountNumber;
 
     public Account(int accountNumber) {
-        balance = 0.0;
+
+
         this.accountNumber = accountNumber;
+    }
+
+    public Account(int accountNumber, double balance){
+
+        this.accountNumber=accountNumber;
+        this.balance=balance;
+
     }
 
     public void deposit(double amountAdded) {
@@ -33,15 +41,18 @@ public abstract class Account {
     }
 
         public double getBalance(){
-        return balance;
+
+            return balance;
     }
 
         public double getAccountNumber() {
-           return accountNumber;
+
+            return accountNumber;
     }
 
     public String toString()
     {
+
         return "Acc " + accountNumber + ": " + "balance = " + balance;
     }
 

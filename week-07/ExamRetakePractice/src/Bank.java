@@ -5,7 +5,20 @@ import java.util.ArrayList;
  */
 public class Bank {
 
-    ArrayList<Accounts> accounts = new ArrayList<>();
+    public static void main(String[] args) {
+
+
+        ArrayList<Accounts> accounts = new ArrayList<>();
+
+        SavingsAcount savingsAcount = new SavingsAcount("Kutya", "Bela", "Vasarosnameny", 12345);
+        accounts.add(savingsAcount);
+
+        MoneyMarketAccount moneyMarketAccount = new MoneyMarketAccount("Sullivan", "Richard", "Boston", 123456);
+        accounts.add(moneyMarketAccount);
+
+        moneyMarketAccount.deposit(100);
+        moneyMarketAccount.moneyTransfer(moneyMarketAccount,savingsAcount,100);
+    }
 
 }
 

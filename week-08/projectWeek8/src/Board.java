@@ -27,12 +27,10 @@ public class Board extends JPanel implements KeyListener {
 
         myArea = new Area();
         myHero = new Hero(0, 0);
-//        myBoss = new Boss(4, 4);
         addKeyListener(this);
         setFocusable(true);
         setPreferredSize(new Dimension(720, 900));
         setVisible(true);
-//        enemies = enemyCreation();
         placeEnemies();
 
     }
@@ -116,33 +114,6 @@ public class Board extends JPanel implements KeyListener {
 
     }
 
-    public ArrayList<Character> enemyCreation() {
-
-        ArrayList<Character> enemies = new ArrayList<>();
-        Random random = new Random();
-        int numberofSkeletons = 3 + random.nextInt(4);
-        int randomPosX;
-        int randomPosY;
-        for (int i = 0; i < numberofSkeletons; i++) {
-            randomPosX = random.nextInt(10);
-            randomPosY = random.nextInt(10);
-            boolean occupied = myArea.isOccupied(randomPosX, randomPosY);
-            while (occupied == true) {
-
-                randomPosX = random.nextInt(10);
-                randomPosY = random.nextInt(10);
-                occupied = myArea.isOccupied(randomPosX, randomPosY);
-
-            }
-            Skeleton skeleton = new Skeleton(randomPosX, randomPosY);
-
-            enemies.add(skeleton);
-
-
-        }
-
-        return enemies;
-    }
 
     public Point randomPositionGenerator() {
         Random random = new Random();

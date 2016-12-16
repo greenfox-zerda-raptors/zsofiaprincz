@@ -58,22 +58,35 @@ public class Character extends GameObject {
 
 
 
-    public void strike (Character anyCharacter){
-        if (anyCharacter != null && this.strikePoint > anyCharacter.defendPoint) {
-            anyCharacter.healthPoint -= this.strikePoint - anyCharacter.defendPoint;
-            if (anyCharacter.healthPoint <= 0){
-                anyCharacter.setAlive(false);
-                anyCharacter.changeImage(Board.deadImg);
+//    public void strike (Character anyCharacter){
+//        if (anyCharacter != null && this.strikePoint > anyCharacter.defendPoint) {
+//            anyCharacter.healthPoint -= this.strikePoint - anyCharacter.defendPoint;
+//            if (anyCharacter.healthPoint <= 0){
+//                anyCharacter.setAlive(false);
+//                anyCharacter.changeImage(Board.deadImg);
+//
+//            }
+//        }
+//
+//            this.healthPoint -= anyCharacter.strikePoint - this.defendPoint;
+//            if (this.healthPoint <= 0){
+//                this.setAlive(false);
+//                this.changeImage(Board.deadImg);
+//            }
+//        }
 
-            }
+    public void strike (Character enemy){
+        this.healthPoint -= enemy.strikePoint;
+        if (this.healthPoint <= 0) {
+            this.setAlive(false);
+            this.changeImage(Board.deadImg);
         }
-
-            this.healthPoint -= anyCharacter.strikePoint - this.defendPoint;
-            if (this.healthPoint <= 0){
-                this.setAlive(false);
-                this.changeImage(Board.deadImg);
-            }
+        enemy.healthPoint-=this.strikePoint;
+        if (enemy.healthPoint <= 0) {
+            enemy.setAlive(false);
+            enemy.changeImage(Board.deadImg);
         }
+    }
 
 
     @Override

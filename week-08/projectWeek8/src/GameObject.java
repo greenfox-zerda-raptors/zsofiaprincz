@@ -31,4 +31,12 @@ public abstract class GameObject {
 
     abstract public void draw(Graphics graphics);
 
-}// GameObject
+    public void changeImage(String filename) {
+        try {
+            image = ImageIO.read(new File(filename));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+}

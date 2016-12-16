@@ -28,7 +28,7 @@ public class Board extends JPanel implements KeyListener {
 
         myArea = new Area();
         myHero = new Hero(0, 0);
-        myBoss = new Boss(4, 4);
+//        myBoss = new Boss(4, 4);
         addKeyListener(this);
         setFocusable(true);
         setPreferredSize(new Dimension(720, 900));
@@ -131,6 +131,7 @@ public class Board extends JPanel implements KeyListener {
 
             }
             Skeleton skeleton = new Skeleton(randomPosX, randomPosY);
+
             enemies.add(skeleton);
 
 

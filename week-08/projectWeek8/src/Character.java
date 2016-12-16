@@ -1,9 +1,11 @@
-import jdk.nashorn.internal.objects.annotations.Getter;
+
+import lombok.Getter;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
-@lombok.Getter
+@Getter
+
 public class Character extends GameObject {
 
     protected int healthPoint;
@@ -60,12 +62,15 @@ public class Character extends GameObject {
                 anyCharacter.healthPoint -= this.strikePoint - anyCharacter.defendPoint;
                 if (anyCharacter.healthPoint <= 0){
                     anyCharacter.setAlive(false);
+                    anyCharacter.changeImage("images/skull.jpg");
+
                 }
             }
                 else {
                 anyCharacter.healthPoint =- this.strikePoint - anyCharacter.defendPoint;
                 if (this.healthPoint <= 0){
                     this.setAlive(false);
+                    this.changeImage("images/skull.jpg");
                 }
             }
 

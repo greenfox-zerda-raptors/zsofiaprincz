@@ -1,10 +1,12 @@
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 @Getter
+@Setter
 
 public class Character extends GameObject {
 
@@ -12,7 +14,6 @@ public class Character extends GameObject {
     protected int defendPoint;
     protected int strikePoint;
     protected boolean alive;
-    int level; //if have time to implement user levels
 
     Random rand= new Random();
 
@@ -43,40 +44,36 @@ public class Character extends GameObject {
         return healthPoint;
     }
 
-//    public int getStrikePoint(){
-//        return strikePoint;
-//    }
+    public int getStrikePoint(){
+        return strikePoint;
+    }
 
-////    public int getDefendPoint(){
-////        return defendPoint;
-//
-//
-//        }
+    public int getDefendPoint(){
+        return defendPoint;
+    }
 
     public void setAlive(boolean alive) {
         this.alive = alive;
     }
 
+
+
     public void strike (Character anyCharacter){
-                if (anyCharacter != null && this.strikePoint > anyCharacter.defendPoint) {
-                anyCharacter.healthPoint -= this.strikePoint - anyCharacter.defendPoint;
-                if (anyCharacter.healthPoint <= 0){
-                    anyCharacter.setAlive(false);
-                    anyCharacter.changeImage("images/skull.jpg");
+        if (anyCharacter != null && this.strikePoint > anyCharacter.defendPoint) {
+            anyCharacter.healthPoint -= this.strikePoint - anyCharacter.defendPoint;
+            if (anyCharacter.healthPoint <= 0){
+                anyCharacter.setAlive(false);
+                anyCharacter.changeImage(Board.deadImg);
 
-                }
             }
-                else {
-                anyCharacter.healthPoint =- this.strikePoint - anyCharacter.defendPoint;
-                if (this.healthPoint <= 0){
-                    this.setAlive(false);
-                    this.changeImage("images/skull.jpg");
-                }
-            }
-
         }
 
-
+            this.healthPoint -= anyCharacter.strikePoint - this.defendPoint;
+            if (this.healthPoint <= 0){
+                this.setAlive(false);
+                this.changeImage(Board.deadImg);
+            }
+        }
 
 
     @Override

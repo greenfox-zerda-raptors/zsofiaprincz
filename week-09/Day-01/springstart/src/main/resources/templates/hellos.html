@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Hellokak</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p th:style="'color:' + ${color}
++ '; font-size:' + ${font_size}
++ 'px'"
+   th:text="${hello} + '!'"/>
+</body>
+</html>

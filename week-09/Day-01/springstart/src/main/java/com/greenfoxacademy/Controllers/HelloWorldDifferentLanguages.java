@@ -21,13 +21,13 @@ public class HelloWorldDifferentLanguages {
 
     Random random = new Random();
 
-    @RequestMapping("/web/helloworlddifferentlanguages")
+    @RequestMapping(value={"/web/helloworlddifferentlanguages","/difflanguages"})
     public String helloEveryone(Model model) {
         model.addAttribute("hello", getHello(hellos));
         model.addAttribute("color", getColor(colors));
         model.addAttribute("font_size", getFontSize());
 
-        return "greet_everyone";
+        return "hellos"; //ennek ugyanaz legyen a neve mint a html-nek
     }
 
     public String getHello(String[] hellos) {

@@ -1,6 +1,6 @@
 package com.greenfoxacademy;
 
-import com.greenfoxacademy.Todo;
+
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Service;

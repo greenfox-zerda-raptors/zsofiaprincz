@@ -11,9 +11,9 @@ public class TodoController {
 
      TodoService todos;
 
-
-    public TodoController(){
-        todos = new TodoService();
+    @Autowired
+    public TodoController(TodoService todoService){
+        this.todos = todoService;
     }
 
     @RequestMapping(value = {"/", "/list"})

@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public final class BirthdayWithJavaUtilDate implements BirthdayCalculator<Date> {
 
@@ -38,15 +39,56 @@ public final class BirthdayWithJavaUtilDate implements BirthdayCalculator<Date> 
 
     @Override
     public int calculateAgeInYears(Date birthday) {
+
         // TODO - return how many years age the input date 'birthday' was
-        return -1;
+        SimpleDateFormat yyyy = new SimpleDateFormat("yyyy");
+        SimpleDateFormat MMdd = new SimpleDateFormat("MMdd");
+        Date today = new Date();
+        int todayYear = Integer.parseInt(yyyy.format(today));
+        int birthdayYear = Integer.parseInt(yyyy.format(birthday));
+        if(Integer.parseInt(MMdd.format(today)) >= Integer.parseInt(MMdd.format(birthday))) {
+            return todayYear - birthdayYear;
+        } else {
+            return todayYear - birthdayYear - 1;
+        }
+
+
     }
 
     @Override
     public int calculateDaysToNextAnniversary(Date date) {
         // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)
-        return -1;
+
+        Calendar dateToday = Calendar.getInstance();
+        Calendar birthdayDate = Calendar.getInstance();
+        birthdayDate.setTime(date);
+
+        int yearToday = dateToday.get(Calendar.YEAR);
+
+        int monthToday = dateToday.get(Calendar.MONTH);
+        int monthBday = birthdayDate.get(Calendar.MONTH);
+
+        int dayToday = dateToday.get(Calendar.DAY_OF_MONTH);
+        int dayBday = birthdayDate.get(Calendar.DAY_OF_MONTH);
+
+        int days;
+        long diff;
+
+        birthdayDate.set(Calendar.YEAR, yearToday);
+
+        if (monthBday > monthToday || (monthBday == monthToday && dayBday > dayToday)) {
+        } else {
+            birthdayDate.set(Calendar.YEAR, yearToday + 1);
+        }
+
+        diff = birthdayDate.getTimeInMillis() - dateToday.getTimeInMillis();
+
+        days = (int) TimeUnit.MILLISECONDS.toDays(diff);
+
+        return days;
     }
+
+
 
     public static void main(String[] args) {
         new BirthdayWithJavaUtilDate().run();

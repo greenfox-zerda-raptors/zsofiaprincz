@@ -10,11 +10,11 @@ public class Account {
 
 
 
-    public Account() {
+    public Account(String s, String s1, Address address) {
 // ORMLite needs a no-arg constructor
     }
 
-    public Account(String name, String password) {
+    public Account() {
         this.name = name;
         this.password = password;
     }
@@ -35,4 +35,15 @@ public class Account {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
+
+
 }

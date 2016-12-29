@@ -12,15 +12,15 @@ public class Workshop01 {
         ConnectionSource connectionSource = new JdbcConnectionSource(databaseUrl);
 
         Dao<Account, String> accountDao =
-                DaoManager.createDao(connectionSource, Account.class);
+                DaoManager.createDao(connectionSource, Account.class); // ez osszekoti a classt az sql-el
 
-        TableUtils.createTable(connectionSource, Account.class);
+        TableUtils.createTable(connectionSource, Account.class); //ez megcsinalja a tablazatot
 
         Account account = new Account();
         account.setName("Captain America");
         account.setPassword("uejnsd632**234.");
 
-        accountDao.create(account);
+        accountDao.create(account); // amikor letrehoztuk a usert akkor kerul be a database-be
 
         Account account2 = accountDao.queryForId("Captain America");
         System.out.println("Account: " + account2.getName());

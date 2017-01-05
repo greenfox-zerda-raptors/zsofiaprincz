@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <html xmlns:th="http://www.thymeleaf.org"/>
+    <meta charset="UTF-8"/>
+    <title>Posts</title>
+</head>
+<body>
+
+<a th:href="@{/posts/add}" href="http://localhost:8080/posts/add">Add new post</a>
+<h1>Posts</h1>
+<table>
+    <thead>
+    <tr>
+       <th>Score</th>
+       <th>Actions</th>
+       <th>Content</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="item:${postService}">
+            <td><a th:href="@{'/'}">+</a>
+                <a th:href="@{'/'}">-</a></td>
+            <td>th:text="${item.content}"</td>
+            <td>th:text="${item.score}"</td>
+        </tr>
+    </tbody>
+
+</table>
+
+<table>
+
+
+
+</table>
+
+</body>
+</html>

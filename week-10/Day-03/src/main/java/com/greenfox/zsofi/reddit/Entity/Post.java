@@ -10,9 +10,9 @@ import java.util.Date;
 public class Post {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
+    private int id;
     private String content;
-    private int score;
+    private int score =0;
     private Date date;
 
     public Post(int id, String content, int score) {
@@ -22,13 +22,16 @@ public class Post {
         date = new Date();
     }
 
-    public Post() {}
+    public Post() {
+        date = new Date();
+    }
 
     public Post(String content) {
+        this();
         this.content = content;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

@@ -29,21 +29,21 @@ public class PostController {
     }
 
     @PostMapping(value = "/add")
-    public String addContentSubmit(@ModelAttribute Post post) {
+    public String addContentSubmit(@ModelAttribute String post) {
         postService.addPost(post);
-        return "redirect:/";
+        return "redirect:/posts/";
     }
 
     @RequestMapping(value = "/{postId}/upVote", method = RequestMethod.GET)
     public String upVote(@PathVariable("postId") Integer id) {
         postService.upVote(id);
-        return "redirect:/posts";
+        return "redirect:/posts/";
     }
 
     @RequestMapping(value = "/{postId}/downVote", method = RequestMethod.GET)
     public String downVote(@PathVariable("postId") Integer id) {
         postService.downVote(id);
-        return "redirect:/posts";
+        return "redirect:/posts/";
 
     }
 

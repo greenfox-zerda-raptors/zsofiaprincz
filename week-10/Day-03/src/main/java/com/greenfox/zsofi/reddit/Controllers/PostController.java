@@ -28,7 +28,7 @@ public class PostController {
         return "add";
     }
 
-    @PostMapping(value = "/add")
+    @PostMapping(value = "/add" )
     public String addContentSubmit(@ModelAttribute Post post) {
         postService.addPost(post);
         return "redirect:/posts/";

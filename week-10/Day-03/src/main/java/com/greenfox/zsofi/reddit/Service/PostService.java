@@ -5,7 +5,6 @@ import com.greenfox.zsofi.reddit.Entity.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -20,11 +19,7 @@ public class PostService {
     }
 
     public List<Post> listPosts(){
-        List<Post> list = new ArrayList<>();
-        for (Post item : postdao.findAll()) {
-            list.add(item);
-        }
-        return list;
+        return postdao.findAllByOrderByScoreDesc();
 
     }
 

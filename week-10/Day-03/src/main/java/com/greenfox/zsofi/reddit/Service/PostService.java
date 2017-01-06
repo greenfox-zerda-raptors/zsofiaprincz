@@ -15,8 +15,8 @@ public class PostService {
     @Autowired
     private PostDao postdao;
 
-    public void addPost(String latestPost) {
-        postdao.save(new Post(latestPost));
+    public void addPost(Post latestPost) {
+        postdao.save(latestPost);
     }
 
     public List<Post> listPosts(){

@@ -29,12 +29,14 @@ public class PostService {
 
     }
 
-    public void upVote(Post post){
+    public void upVote(Integer id){
+        Post post = postdao.findOne(id);
         post.setScore(post.getScore() +1);
         postdao.save(post);
     }
 
-    public void downVote(Post post){
+    public void downVote(Integer id){
+        Post post = postdao.findOne(id);
         post.setScore(post.getScore() -1);
         postdao.save(post);
     }

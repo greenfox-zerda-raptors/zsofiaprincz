@@ -6,10 +6,7 @@ import com.greenfox.zsofi.reddit.Service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/posts")
@@ -21,6 +18,7 @@ public class PostController {
     @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute("postService", postService.listPosts());
+        model.addAttribute("date_format", "dd/MM/yyyy");
         return "posts";
     }
 
@@ -36,4 +34,20 @@ public class PostController {
         return "redirect:/";
     }
 
+    @RequestMapping(value = "/{postId}/upVote", method = RequestMethod.GET)
+    public String upVote(@PathVariable("postId") Integer id) {
+        postService.upVote(id);
+        return "redirect:/posts";
+    }
+
+    @RequestMapping(value = "/{postId}/downVote", method = RequestMethod.GET)
+    public String downVote(@PathVariable("postId") Integer id) {
+        postService.downVote(id);
+        return "redirect:/posts";
+
+    }
+
+
 }
+
+

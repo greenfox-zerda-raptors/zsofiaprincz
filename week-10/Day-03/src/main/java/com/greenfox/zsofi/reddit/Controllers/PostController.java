@@ -18,7 +18,7 @@ public class PostController {
     @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute("postService", postService.listPosts());
-        model.addAttribute("date_format", "dd/MM/yyyy");
+//        model.addAttribute("date_format", "dd/MM/yyyy");
         return "posts";
     }
 

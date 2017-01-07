@@ -1,10 +1,14 @@
 package com.greenfox.zsofi.reddit.Entity;
 
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
 
 
+@Getter
+@Setter
 @Table(name="posts")
 @Entity
 public class Post {
@@ -13,14 +17,10 @@ public class Post {
     private int id;
     private String content;
     private int score =0;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
-    public Post(int id, String content, int score) {
-        this.id = id;
-        this.content = content;
-        this.score = score;
-        date = new Date();
-    }
+
 
     public Post() {
         date = new Date();
@@ -31,29 +31,6 @@ public class Post {
         this.content = content;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
 
     @Override
     public String toString() {

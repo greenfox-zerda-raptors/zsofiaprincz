@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="UTF-8"/>
+    <title>Code</title>
+</head>
+<body>
+<div class="container theme-showcase" role="main">
+<h1>Code your message here:</h1>
+
+<form action="#" th:action="@{/code}" th:object="${message}" th:method="post"> <!--az elso az a requestmapping, masodik az object, harmadik a method-->
+    <p>Shift: <input type="number" th:field="*{shift}" /></p>
+    <p>Message: <input type="text" th:field="*{messageText}" /> </p>
+    <p><input type="submit" value="Submit" />  </p>
+</form>
+</div>
+</body>
+</html>

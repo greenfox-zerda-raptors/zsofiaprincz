@@ -2,17 +2,31 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
 <head>
     <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
     <title>Code</title>
+
+    <link th:href="@{'/custom.css'}" rel="stylesheet"/>
 </head>
 <body>
-<div class="container theme-showcase" role="main">
-<h1>Code your message here:</h1>
 
-<form action="#" th:action="@{/code}" th:object="${message}" th:method="post"> <!--az elso az a requestmapping, masodik az object, harmadik a method-->
-    <p>Shift: <input type="number" th:field="*{shift}" /></p>
-    <p>Message: <input type="text" th:field="*{messageText}" /> </p>
-    <p><input type="submit" value="Submit" />  </p>
+<h1>Encode your message here</h1>
+
+<form th:action="@{/code}" th:object="${message}" th:method="post"  >
+
+    <label for="shift" th:text="'Shift'"></label>
+    <br>
+    <input id="shift" type="number" th:field="*{shift}" />
+    </br>
+    <label for="content" th:text="'Your message'" ></label>
+        <br>
+    <!--<input type="text" th:field="*{messageText}" />-->
+    <input id="content" type="text" th:field="*{messageText}" />
+    </br>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-</div>
+
 </body>
 </html>

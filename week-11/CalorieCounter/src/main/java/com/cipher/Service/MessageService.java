@@ -1,5 +1,7 @@
-package com.caloriecounter;
+package com.cipher.Service;
 
+import com.cipher.Entity.Message;
+import com.cipher.Repo.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

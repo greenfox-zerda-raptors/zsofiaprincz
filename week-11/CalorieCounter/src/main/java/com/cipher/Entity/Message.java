@@ -1,4 +1,4 @@
-package com.caloriecounter;
+package com.cipher.Entity;
 
 
 import lombok.Getter;
